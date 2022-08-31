@@ -1,0 +1,39 @@
+﻿@model ThirdWebZoo.Models.AllModel
+@{
+    ViewData["Title"] = "All Animals";
+}
+<h1>@ViewData["Title"]</h1>
+
+@foreach (var item in Model.AllCategories!)
+{
+        <div class="rounded float-start m-4">
+
+        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species"> 
+            <img src=@item.AnimalPicture class="myPic image-responsive"/> </a>
+
+        <br/>
+        <a class="btn btn-outline-primary m-2" asp-controller="Species" asp-action="IndexSpec" asp-route-categoryId="@item.CategoryId"> @item.Name </a>
+        </div>
+}
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Portrait</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach (var element in Model.AllAnimals!)
+        { 
+        <tr>
+        <td>@element.Name</td>
+        <td></td>
+        <td>Mark</td>
+        <td>Otto</td>
+        </tr>
+        }
+  </tbody>
+</table>
