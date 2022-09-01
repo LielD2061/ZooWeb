@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TheZOO.Data;
+using ThirdWebZoo.Models;
 using ThirdWebZoo.Repositories;
 
 namespace ThirdWebZoo.Controllers
@@ -16,6 +15,10 @@ namespace ThirdWebZoo.Controllers
         {
             var animal = _ar.GetData();
             return View(animal);
+        }
+        public IActionResult NewComment(string newComment, int AnimalId)
+        {
+            return View();
         }
     }
 }
