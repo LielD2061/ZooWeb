@@ -2,10 +2,10 @@
 
 namespace ThirdWebZoo.Repositories
 {
-    public interface IAllAnimalRepository
+    public interface IGeneralRepository
     {
         public AllModel GetData();
         public AllModel GetByCategory(int categoryId);
-        public AllModel GetHighestComments();
+        public AllModel GetTwoHighestComments();
     }
 }
