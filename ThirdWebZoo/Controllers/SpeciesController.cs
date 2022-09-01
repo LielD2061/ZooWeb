@@ -6,8 +6,8 @@ namespace ThirdWebZoo.Controllers
 {
     public class SpeciesController : Controller
     {
-        private IAllAnimalRepository _ar;
-        public SpeciesController(IAllAnimalRepository ar)
+        private IGeneralRepository _ar;
+        public SpeciesController(IGeneralRepository ar)
         {
             _ar = ar;
         }
