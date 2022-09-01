@@ -1776,11 +1776,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\liel\\Desktop\\ThirdWebZoo\\ThirdWebZoo\\ThirdWebZoo\\ThirdWebZoo.csproj",
+      "projectUniqueName": "C:\\Users\\liel\\Desktop\\GitHubProjects\\ZooWeb\\ThirdWebZoo\\ThirdWebZoo.csproj",
       "projectName": "ThirdWebZoo",
-      "projectPath": "C:\\Users\\liel\\Desktop\\ThirdWebZoo\\ThirdWebZoo\\ThirdWebZoo\\ThirdWebZoo.csproj",
+      "projectPath": "C:\\Users\\liel\\Desktop\\GitHubProjects\\ZooWeb\\ThirdWebZoo\\ThirdWebZoo.csproj",
       "packagesPath": "C:\\Users\\liel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\liel\\Desktop\\ThirdWebZoo\\ThirdWebZoo\\ThirdWebZoo\\obj\\",
+      "outputPath": "C:\\Users\\liel\\Desktop\\GitHubProjects\\ZooWeb\\ThirdWebZoo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
