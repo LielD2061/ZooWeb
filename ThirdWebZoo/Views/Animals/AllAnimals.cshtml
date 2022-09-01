@@ -6,35 +6,46 @@
 
 @foreach (var item in Model.AllCategories!)
 {
-        <div class="rounded float-start m-4">
+    <div class="rounded float-start m-4">
 
-        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species" asp-route-categoryId="@item.CategoryId"> 
-            <img src=@item.AnimalPicture class="myPic image-responsive"/> </a>
+        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species" asp-route-categoryId="@item.CategoryId">
+            <img src=@item.AnimalPicture class="myPic image-responsive" />
+        </a>
 
-        <br/>
-        <a class="btn btn-outline-primary m-2" asp-controller="Species" asp-action="IndexSpec" 
-        asp-route-categoryId="@item.CategoryId"> @item.Name </a>
-        </div>
+        <br />
+        <a class="btn btn-outline-primary m-2" asp-controller="Species" asp-action="IndexSpec"
+       asp-route-categoryId="@item.CategoryId"> @item.Name </a>
+    </div>
 }
 
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Portrait</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Comment</th>
-    </tr>
-  </thead>
-  <tbody>
-      @foreach (var element in Model.AllAnimals!)
-        { 
+<table class="table">
+    <thead>
         <tr>
-        <td>@element.Name</td>
-        <td></td>
-        <td></td>
-        <td></td>
+            <th scope="col">Portrait</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Comment</th>
         </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in Model.AllAnimals!)
+        {
+            <tr>
+                <td>@element.AnimalPicture</td>
+                <td>@element.Name</td>
+                <td>@element.Description</td>
+                <td>
+                    @element.Comments_Animals
+                    <form asp-controller="Animals" asp-action="NewComment" id="textBox">
+                        <div>
+                            <label for="com"> Write your comment here </label>
+                            <input name="com" id="try" form="@element.AnimalId"/>
+                        </div>
+                        <button type="submit">comment</button>
+                    </form>
+                </td>
+            </tr>
         }
-  </tbody>
+    </tbody>
 </table>
+

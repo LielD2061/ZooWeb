@@ -13,10 +13,10 @@
       @foreach (var element in Model.AllAnimals!)
         { 
         <tr>
+        <td>@element.AnimalPicture</td>
         <td>@element.Name</td>
-        <td></td>
-        <td>Mark</td>
-        <td>Otto</td>
+        <td>@element.Description</td>
+        <td>@element.Comments_Animals</td>
         </tr>
         }
   </tbody>
