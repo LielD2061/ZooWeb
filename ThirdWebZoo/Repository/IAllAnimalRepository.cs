@@ -6,6 +6,6 @@ namespace ThirdWebZoo.Repositories
     {
         public AllModel GetData();
         public AllModel GetByCategory(int categoryId);
-        public AllModel GetHighestComments();
+        public AllModel GetTwoHighestComments();
     }
 }
