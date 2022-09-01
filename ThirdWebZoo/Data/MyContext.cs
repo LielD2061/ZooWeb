@@ -36,12 +36,12 @@ namespace TheZOO.Data
                     AnimalAge = 5, AnimalClass="Reptiles"}
                 );
 
-            modelBuilder.Entity<Comment>().HasData(
-                new { CommentId = 1, AnimalId = 1, Comments = "a" },
-                new { CommentId = 2, AnimalId = 1, Comments = "d" },
-                new { CommentId = 3, AnimalId = 1, Comments = "g" },
-                new { CommentId = 4, AnimalId = 2, Comments = "b" }
-                );
+            //modelBuilder.Entity<Comment>().HasData(
+            //    new { CommentId = 1, AnimalId = 1, Comments = "a" },
+            //    new { CommentId = 2, AnimalId = 3, Comments = "d" },
+            //    new { CommentId = 3, AnimalId = 3, Comments = "g" },
+            //    new { CommentId = 4, AnimalId = 2, Comments = "b" }
+            //    );
 
             modelBuilder.Entity<Admin>().HasData(
                 new { AdminId = 1, Password = "A" },

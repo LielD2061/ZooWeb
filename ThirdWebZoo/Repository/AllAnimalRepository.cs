@@ -34,18 +34,13 @@ namespace ThirdWebZoo.Repositories
                                select a;
             return temp1;
         }
-        public AllModel GetHighestComments()
+        public AllModel GetTwoHighestComments()
         {
-            var temp = new AllModel()
+            var animalwithhighestcomments = new AllModel
             {
-                AllAnimals = _context.animals,
-                AllComments = _context.comments
+                AllAnimals = _context.animals.OrderByDescending(a => a.Comments_Animals!.Count()).Take(2)
             };
-            var temp1 = new AllModel();
-            temp1.AllAnimals = from a in temp.AllAnimals
-                               where a.Comments_Animals!.Count > 0
-                               select a;
-            return temp1;
+            return animalwithhighestcomments;
         }
     }
 }

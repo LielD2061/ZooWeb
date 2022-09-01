@@ -17,10 +17,5 @@ namespace ThirdWebZoo.Controllers
             var animal = _ar.GetData();
             return View(animal);
         }
-        //public IActionResult Filter(int categoryId)
-        //{
-        //    var category = _ar.GetByCategory(1);
-        //    return View(category);
-        //}
     }
 }
