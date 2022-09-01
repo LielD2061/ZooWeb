@@ -34,5 +34,18 @@ namespace ThirdWebZoo.Repositories
                                select a;
             return temp1;
         }
+        public AllModel GetHighestComments()
+        {
+            var temp = new AllModel()
+            {
+                AllAnimals = _context.animals,
+                AllComments = _context.comments
+            };
+            var temp1 = new AllModel();
+            temp1.AllAnimals = from a in temp.AllAnimals
+                               where a.Comments_Animals!.Count > 0
+                               select a;
+            return temp1;
+        }
     }
 }
