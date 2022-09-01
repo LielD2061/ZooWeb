@@ -17,8 +17,9 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult Index()
         {
-            var animal = _ar.GetTwoHighestComments();
-            return View(animal);
+            AllModel allModel = new AllModel();
+            allModel.AllAnimals = _ar.GetTwoHighestComments();
+            return View(allModel);
         }
         public IActionResult Map()
         {
