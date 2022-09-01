@@ -18,6 +18,10 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult Index()
         {
+<<<<<<< HEAD
+=======
+            //var animal = _ar.GetData();
+>>>>>>> 541e69bc44b9e593ad58d1cc2a5a134606d7b6ef
             var animal = _ar.GetTwoHighestComments();
             return View(animal);
         }

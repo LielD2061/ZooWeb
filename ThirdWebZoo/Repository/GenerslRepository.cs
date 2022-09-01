@@ -36,11 +36,19 @@ namespace ThirdWebZoo.Repositories
         }
         public AllModel GetTwoHighestComments()
         {
+<<<<<<< HEAD:ThirdWebZoo/Repository/GenerslRepository.cs
             var highestTwoComments = new AllModel()
             {
                 AllAnimals = _context.animals.OrderByDescending(a => a.Comments_Animals!.Count).Take(2)
             };
             return highestTwoComments;
+=======
+            var animalwithhighestcomments = new AllModel
+            {
+                AllAnimals = _context.animals.OrderByDescending(a => a.Comments_Animals!.Count()).Take(2)
+            };
+            return animalwithhighestcomments;
+>>>>>>> 541e69bc44b9e593ad58d1cc2a5a134606d7b6ef:ThirdWebZoo/Repository/AllAnimalRepository.cs
         }
     }
 }
