@@ -3,10 +3,10 @@ using ThirdWebZoo.Models;
 
 namespace ThirdWebZoo.Repositories
 {
-    public class AllAnimalRepository : IAllAnimalRepository
+    public class GeneralRepository : IGeneralRepository
     {
         private MyContext _context;
-        public AllAnimalRepository(MyContext context)
+        public GeneralRepository(MyContext context)
         {
             _context = context;
         }

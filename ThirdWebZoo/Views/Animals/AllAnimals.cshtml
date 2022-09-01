@@ -8,10 +8,8 @@
 {
         <div class="rounded float-start m-4">
 
-        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species" 
-        asp-route-categoryId="@item.CategoryId"> 
-
-        <img src=@item.AnimalPicture class="myPic image-responsive" /> </a>
+        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species" asp-route-categoryId="@item.CategoryId"> 
+            <img src=@item.AnimalPicture class="myPic image-responsive"/> </a>
 
         <br/>
         <a class="btn btn-outline-primary m-2" asp-controller="Species" asp-action="IndexSpec" 

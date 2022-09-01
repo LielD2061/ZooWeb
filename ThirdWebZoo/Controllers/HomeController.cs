@@ -8,16 +8,15 @@ namespace ThirdWebZoo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private IAllAnimalRepository _ar;
+        private IGeneralRepository _ar;
 
-        public HomeController(ILogger<HomeController> logger, IAllAnimalRepository ar)
+        public HomeController(ILogger<HomeController> logger, IGeneralRepository ar)
         {
             _logger = logger;
             _ar = ar;
         }
         public IActionResult Index()
         {
-            //var animal = _ar.GetData();
             var animal = _ar.GetTwoHighestComments();
             return View(animal);
         }
