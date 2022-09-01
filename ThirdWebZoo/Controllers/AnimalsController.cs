@@ -7,8 +7,8 @@ namespace ThirdWebZoo.Controllers
 {
     public class AnimalsController : Controller
     {
-        private IAllAnimalRepository _ar;
-        public AnimalsController(IAllAnimalRepository ar)
+        private IGeneralRepository _ar;
+        public AnimalsController(IGeneralRepository ar)
         {
             _ar = ar;
         }
@@ -17,10 +17,5 @@ namespace ThirdWebZoo.Controllers
             var animal = _ar.GetData();
             return View(animal);
         }
-        //public IActionResult Filter(int categoryId)
-        //{
-        //    var category = _ar.GetByCategory(1);
-        //    return View(category);
-        //}
     }
 }
