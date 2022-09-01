@@ -5,7 +5,7 @@ using ThirdWebZoo.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddTransient<IGeneralRepository, GenerslRepository>();
+builder.Services.AddTransient<IGeneralRepository, GeneralRepository>();
 string connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
 builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddControllersWithViews();
