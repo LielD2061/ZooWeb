@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TheZOO.Data;
 using ThirdWebZoo.Repositories;
 
 namespace ThirdWebZoo.Controllers
