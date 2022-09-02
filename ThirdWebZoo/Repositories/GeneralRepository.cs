@@ -51,10 +51,10 @@ namespace ThirdWebZoo.Repositories
             _context.SaveChanges();
             return _context.animals!.OrderByDescending(c => c.Comments_Animals!.Count).Take(2);
         }
-        public string GetNewComment(string newComment, int anumalId)
+        public string GetNewComment(string newComment, int animalId)
         {
             string msg = "Excepted";
-            _context.comments!.Add(new Comment { Comments = newComment, AnimalId = anumalId });
+            _context.comments!.Add(new Comment { Comments = newComment, AnimalId = animalId});
             _context.SaveChanges();
             return msg;
         }
