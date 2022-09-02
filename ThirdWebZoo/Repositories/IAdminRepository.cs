@@ -5,6 +5,6 @@ namespace ThirdWebZoo.Repositories
     public interface IAdminRepository
     {
         public Admin GetAdmins();
-        public Admin AllowAdmin();
+        public bool AllowAdmin(Admin admin);
     }
 }

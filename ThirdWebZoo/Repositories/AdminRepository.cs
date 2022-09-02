@@ -11,10 +11,16 @@ namespace ThirdWebZoo.Repositories
             _context = context;
         }
 
-        public Admin AllowAdmin()
+        public bool AllowAdmin(Admin admin)
         {
-            throw new NotImplementedException();
+            foreach (var checkadmin in _context.admins!)
+            {
+                if (checkadmin.AdminName == admin.AdminName && checkadmin.Password == admin.Password)
+                    return true;
+            }
+            return false;
         }
+        
 
         public Admin GetAdmins()
         {
