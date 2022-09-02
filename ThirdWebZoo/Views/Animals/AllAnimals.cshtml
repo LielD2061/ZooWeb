@@ -8,7 +8,8 @@
 {
     <div class="rounded float-start m-4">
 
-        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species" asp-route-categoryId="@item.CategoryId">
+        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species" 
+        asp-route-categoryId="@item.CategoryId">
             <img src=@item.AnimalPicture class="myPic image-responsive" />
         </a>
 
@@ -36,10 +37,10 @@
                 <td>@element.Description</td>
                 <td>
                     @element.Comments_Animals
-                    <form asp-controller="Animals" asp-action="NewComment" id="textBox">
+                    <form asp-controller="Animals" asp-action="NewComment">
                         <div>
-                            <label for="com"> Write your comment here </label>
-                            <input name="com" id="try" form="@element.AnimalId"/>
+                            <label> Write your comment here </label>
+                            <input name="newComment"/>
                         </div>
                         <button type="submit">comment</button>
                     </form>

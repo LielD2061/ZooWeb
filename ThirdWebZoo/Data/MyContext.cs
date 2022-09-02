@@ -18,10 +18,13 @@ namespace TheZOO.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
+
                 new { CategoryId = 1, Name = "Fish", AnimalPicture = "/MainImages/Tuna.jpg" },
                 new { CategoryId = 2, Name = "Mammals", AnimalPicture = "/MainImages/Lion.jpg" },
+
                 new { CategoryId = 3, Name = "Birds", AnimalPicture = "/MainImages/Eagle.jpg" },
                 new { CategoryId = 4, Name = "Amphibians", AnimalPicture = "/MainImages/Salamandra.jpg" },
+
                 new { CategoryId = 5, Name = "Reptiles", AnimalPicture = "/MainImages/Python.jpg" }
                 );
 
