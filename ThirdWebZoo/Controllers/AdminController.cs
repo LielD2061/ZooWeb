@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ThirdWebZoo.Models;
 using ThirdWebZoo.Repositories;
 
 namespace ThirdWebZoo.Controllers
@@ -18,9 +19,10 @@ namespace ThirdWebZoo.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult UsingAdmin(string username, string password)
+        public IActionResult UsingAdmin(Admin admin)
         {
-            return View();
+            var adminview = _adminRepository.AllowAdmin(admin);
+            return adminview ? View() : View("Index");
         }
     }
 }

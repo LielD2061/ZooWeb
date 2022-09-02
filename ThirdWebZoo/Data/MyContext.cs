@@ -9,12 +9,10 @@ namespace TheZOO.Data
         public MyContext(DbContextOptions<MyContext> options) : base(options)
         {
         }
-
         public DbSet<Category>? categories { get; set; }
         public DbSet<Animal>? animals { get; set; }
         public DbSet<Comment>? comments { get; set; }
         public DbSet<Admin>? admins { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
