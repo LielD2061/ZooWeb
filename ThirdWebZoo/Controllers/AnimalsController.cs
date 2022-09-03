@@ -16,12 +16,17 @@ namespace ThirdWebZoo.Controllers
             var animal = _ar.GetData();
             return View(animal);
         }
-
         [HttpPost]
-        public IActionResult NewComment(string newComment, int AnimalId)
+        public IActionResult NewComment([Bind]string newComment, int AnimalId)
         {
             _ar.GetNewComment(newComment, AnimalId);
             return View();
+        }
+        public IActionResult GetAnimal(int animalId)
+        {
+            var pickedanimal = _ar.GetAnimal(animalId);
+            ViewBag.AnimalName = pickedanimal.Name;
+            return View(pickedanimal);
         }
     }
 }

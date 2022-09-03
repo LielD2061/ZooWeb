@@ -9,5 +9,6 @@ namespace ThirdWebZoo.Repositories
         public IEnumerable<Animal> GetTwoHighestComments();
         public string GetNewComment(string newComment, int AnimalId);
         public string CategoryName(int categoryId);
+        public Animal GetAnimal(int animalid);
     }
 }

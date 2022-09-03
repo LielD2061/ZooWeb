@@ -40,6 +40,7 @@ namespace ThirdWebZoo.Repositories
             var cc = _context.comments!.ToList();
             foreach (var animal in ac)
             {
+
                 foreach (var comment in cc)
                 {
                     if (comment.AnimalId == animal.AnimalId && !animal.Comments_Animals!.Any(c => c.CommentId == comment.CommentId))
@@ -54,7 +55,7 @@ namespace ThirdWebZoo.Repositories
         public string GetNewComment(string newComment, int AnimalId)
         {
             string msg = "Excepted";
-            _context.comments!.Add(new Comment { Comments = newComment, AnimalId = AnimalId});
+            _context.comments!.Add(new Comment { Comments = newComment, AnimalId = AnimalId });
             _context.SaveChanges();
             return msg;
         }
@@ -65,10 +66,21 @@ namespace ThirdWebZoo.Repositories
                 string categoryname;
                 if (category.CategoryId == categoryId)
                 {
-                   return categoryname = category.Name!;
+                    return categoryname = category.Name!;
                 }
             }
             return "";
+        }
+
+        public Animal GetAnimal(int animalid)
+        {
+            foreach (var individual in _context.animals!)
+            {
+                if (individual.AnimalId == animalid)
+                    return individual;
+            }
+            var stam = new Animal();
+            return stam;
         }
     }
 }
