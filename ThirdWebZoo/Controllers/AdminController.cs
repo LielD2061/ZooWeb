@@ -22,7 +22,8 @@ namespace ThirdWebZoo.Controllers
         public IActionResult UsingAdmin(Admin admin)
         {
             var adminview = _adminRepository.AllowAdmin(admin);
-            return adminview ? View() : View("Index");
+            ViewBag.AdminName = admin.AdminName;
+            return adminview ? View() : RedirectToAction("Index","Home");
         }
     }
 }
