@@ -45,11 +45,8 @@ namespace TheZOO.Data
                 );
 
             modelBuilder.Entity<Admin>().HasData(
-                new { AdminId = 1, AdminName ="J", Password = "A" },
-                new { AdminId = 2, Password = "A" },
-                new { AdminId = 3, Password = "A" },
-                new { AdminId = 4, Password = "A" },
-                new { AdminId = 5, Password = "A" }
+                new { AdminId = 1, AdminName ="Liel", Password = "A" },
+                new { AdminId = 2, AdminName ="Saar", Password = "A" }
                 );
 
             modelBuilder.Entity<AnimalsPictuersModel>().HasData(

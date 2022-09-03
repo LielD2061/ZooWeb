@@ -58,5 +58,17 @@ namespace ThirdWebZoo.Repositories
             _context.SaveChanges();
             return msg;
         }
+        public string CategoryName(int categoryId)
+        {
+            foreach (var category in _context.categories!)
+            {
+                string categoryname;
+                if (category.CategoryId == categoryId)
+                {
+                   return categoryname = category.Name!;
+                }
+            }
+            return "";
+        }
     }
 }

@@ -14,6 +14,8 @@ namespace ThirdWebZoo.Controllers
         public IActionResult IndexSpec(int categoryId)
         {
             var animal = _ar.GetByCategory(categoryId);
+            var category = _ar.CategoryName(categoryId);
+            ViewBag.Name = category;
             return View(animal);
         }
     }
