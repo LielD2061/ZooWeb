@@ -8,8 +8,8 @@
 {
     <div class="rounded float-start m-4">
 
-        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species" 
-        asp-route-categoryId="@item.CategoryId">
+        <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species"
+       asp-route-categoryId="@item.CategoryId">
             <img src=@item.AnimalPicture class="myPic image-responsive" />
         </a>
 
@@ -37,12 +37,12 @@
                 <td>@element.Description</td>
                 <td>
                     @element.Comments_Animals
-                    <form asp-controller="Animals" asp-action="NewComment">
+                    <form asp-controller="Animals" asp-action="NewComment" method="post">
                         <div>
-                            <label> Write your comment here </label>
-                            <input name="newComment"/>
+                            <input name="newComment" placeholder="Write Comment"/>
+                            <input name="AnimalId"  type="hidden" value="@element.AnimalId"/>
                         </div>
-                        <button type="submit">comment</button>
+                        <input type="submit" name="AnimalId" value="comment" />
                     </form>
                 </td>
             </tr>
@@ -50,3 +50,4 @@
     </tbody>
 </table>
 
+@await Html.PartialAsync("_MapBtnPartialView")
