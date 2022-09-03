@@ -32,7 +32,7 @@ namespace TheZOO.Data
                 new { AnimalId = 1, Description= "any of many large, heavy-beaked, big-footed birds of prey belonging to the family Accipitridae.", Name ="Joe", CategoryId= 3, Species = "Eagle", 
                     AnimalAge = 1, AnimalClass = "Birds"},
 
-                new { AnimalId = 2, Description= "arge, powerfully built cat (family Felidae) that is second in size only to the tiger.", Name ="Kfir", Species = "Lion", CategoryId = 2,
+                new { AnimalId = 2, Description= "Large, powerfully built cat (family Felidae) that is second in size only to the tiger.", Name ="Kfir", Species = "Lion", CategoryId = 2,
                     AnimalAge = 3, AnimalClass="Mammals"},
 
                 new { AnimalId = 3, Description= "also called serpent, any of more than 3,400 species of reptiles distinguished by their limbless condition and greatly elongated body and tail.", Name ="Edmond", Species = "Snake", CategoryId = 5,
