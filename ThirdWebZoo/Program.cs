@@ -12,12 +12,12 @@ builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(connect
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var ctx = scope.ServiceProvider.GetRequiredService<MyContext>();
-    ctx.Database.EnsureDeleted();
-    ctx.Database.EnsureCreated();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var ctx = scope.ServiceProvider.GetRequiredService<MyContext>();
+//    ctx.Database.EnsureDeleted();
+//    ctx.Database.EnsureCreated();
+//}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

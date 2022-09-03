@@ -32,15 +32,29 @@
         @foreach (var element in Model.AllAnimals!)
         {
             <tr>
-                <td>@element.AnimalPicture</td>
-                <td>@element.Name</td>
+                <td>
+                    @element.AnimalPicture
+                    <div class="rounded float-start m-4">
+                        <a class="btn btn-primary" value="check" asp-action="GetAnimal" asp-controller="Animals"
+                       asp-route-animalid="@element.AnimalId">
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <div class="rounded float-start m-4">
+                        @element.Name
+                        <a class="btn btn-primary" value="check" asp-action="GetAnimal" asp-controller="Animals"
+                       asp-route-animalid="@element.AnimalId">
+                        </a>
+                    </div>
+                </td>
                 <td>@element.Description</td>
                 <td>
                     @element.Comments_Animals
                     <form asp-controller="Animals" asp-action="NewComment" method="post">
                         <div>
-                            <input name="newComment" placeholder="Write Comment"/>
-                            <input name="AnimalId"  type="hidden" value="@element.AnimalId"/>
+                            <input name="newComment" placeholder="Write Comment" />
+                            <input name="AnimalId" type="hidden" value="@element.AnimalId" />
                         </div>
                         <input type="submit" name="AnimalId" value="comment" />
                     </form>
