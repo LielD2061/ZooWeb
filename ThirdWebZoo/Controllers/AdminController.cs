@@ -38,7 +38,7 @@ namespace ThirdWebZoo.Controllers
             _adminRepository.AddAnimal(animal);
             return RedirectToAction("UsingAdmin");
         }
-        public IActionResult DeleteAnimal()
+        public IActionResult AdminSelection()
         {
             var animal = _ar.GetData();
             return View(animal);

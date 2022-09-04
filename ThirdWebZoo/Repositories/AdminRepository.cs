@@ -15,6 +15,7 @@ namespace ThirdWebZoo.Repositories
         {
             var newanimal = new Animal();
             newanimal = animal;
+            _context.animals.Add(newanimal);
             _context.SaveChanges();
             return true;
         }
