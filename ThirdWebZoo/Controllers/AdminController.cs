@@ -43,11 +43,11 @@ namespace ThirdWebZoo.Controllers
             var animal = _ar.GetData();
             return View(animal);
         }
-        public IActionResult DeleteAnimal1(int animalId)
+        public IActionResult DeleteAnimal(int animalId)
         {
             _adminRepository.RemoveAnimal(animalId);
             return RedirectToAction("UsingAdmin");
-        } 
+        }
         public IActionResult GetToComments(int animalId)
         {
             var selectedanimal = _ar.GetAnimal(animalId);
@@ -69,6 +69,16 @@ namespace ThirdWebZoo.Controllers
         public IActionResult EditComment(int commentId, string editedcomment)
         {
             _adminRepository.EditComment(commentId, editedcomment);
+            return RedirectToAction("AdminSelection");
+        }
+        public IActionResult EditAnimal(int animalId)
+        {
+            var getanimal = _ar.GetAnimal(animalId);
+            return View(getanimal);
+        }
+        public IActionResult EditAnimal1(Animal animal)
+        {
+            _adminRepository.EditAnimal(animal);
             return RedirectToAction("AdminSelection");
         }
     }
