@@ -49,5 +49,22 @@ namespace ThirdWebZoo.Repositories
             }
             return comments;
         }
+        public bool DeleteComment(int commentId)
+        {
+            foreach (var comment in _context.comments!)
+            {
+                if (comment.CommentId.Equals(commentId))
+                    _context.comments.Remove(comment);
+            }
+            _context.SaveChanges();
+            return true;
+        }
+        public bool EditComment(int commentId, string editedComment)
+        {
+            var comment = _context.comments!.First(c => c.CommentId == commentId);
+            comment.Comments = editedComment;
+            _context.SaveChanges();
+            return true;
+        }
     }
 }

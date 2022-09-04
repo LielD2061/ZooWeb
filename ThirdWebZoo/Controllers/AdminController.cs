@@ -63,6 +63,12 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult DeleteComment(int commentId)
         {
+            _adminRepository.DeleteComment(commentId);
+            return RedirectToAction("AdminSelection");
+        }
+        public IActionResult EditComment(int commentId, string editedcomment)
+        {
+            _adminRepository.EditComment(commentId, editedcomment);
             return RedirectToAction("AdminSelection");
         }
     }

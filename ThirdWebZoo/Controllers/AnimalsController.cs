@@ -17,7 +17,7 @@ namespace ThirdWebZoo.Controllers
             return View(animal);
         }
         [HttpPost]
-        public IActionResult NewComment([Bind]string newComment, int AnimalId)
+        public IActionResult NewComment(string newComment, int AnimalId)
         {
             _ar.GetNewComment(newComment, AnimalId);
             return View();
