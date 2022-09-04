@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ThirdWebZoo.Models.Comment>
+@{
+    ViewData["Title"] = "GetToComments";
+}
+
+<h1>@ViewBag.Animalname</h1>
+@foreach (var comment in Model)
+{
+    <div>@comment.CommentId</div>
+    <div>@comment.Comments</div>
+    <div>
+        <form>
+
+        </form>
+         <form>
+
+        </form>
+    </div>
+}

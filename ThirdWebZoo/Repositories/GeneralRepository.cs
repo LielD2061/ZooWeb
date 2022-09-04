@@ -71,7 +71,6 @@ namespace ThirdWebZoo.Repositories
             }
             return "";
         }
-
         public Animal GetAnimal(int animalid)
         {
             foreach (var individual in _context.animals!)
