@@ -9,11 +9,15 @@
     <div>@comment.CommentId</div>
     <div>@comment.Comments</div>
     <div>
-        <form>
-
-        </form>
-         <form>
-
-        </form>
+        <a asp-action="DeleteComment" asp-controller="Admin" asp-route-commentId="@comment.CommentId">
+            Delete Comment
+        </a>
     </div>
+    <form asp-controller="Admin" asp-action="EditComment" method="post">
+        <div>
+            <input type="text" name="editedcomment" placeholder="Edit Comment" />
+            <input name="commentId" type="hidden" value="@comment.CommentId" />
+        </div>
+        <input type="submit" name="commentId" value="Edit" />
+    </form>
 }
