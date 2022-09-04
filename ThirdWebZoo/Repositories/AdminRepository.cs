@@ -11,6 +11,14 @@ namespace ThirdWebZoo.Repositories
             _context = context;
         }
 
+        public bool AddAnimal(Animal animal)
+        {
+            var newanimal = new Animal();
+            newanimal = animal;
+            _context.SaveChanges();
+            return true;
+        }
+
         public bool AllowAdmin(Admin admin)
         {
             foreach (var checkadmin in _context.admins!)
@@ -19,12 +27,6 @@ namespace ThirdWebZoo.Repositories
                     return true;
             }
             return false;
-        }
-        
-
-        public Admin GetAdmins()
-        {
-            throw new NotImplementedException();
         }
     }
 }
