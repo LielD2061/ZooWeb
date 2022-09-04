@@ -82,7 +82,7 @@ namespace TheZOO.Data
                     Description = "Barn owl, any of several species of nocturnal birds of prey of the genus Tyto.",
                     Name = "Hedwig",
                     Species = "Barn Owl",
-                    CategoryId = 5,
+                    CategoryId = 3,
                     AnimalAge = 3,
                     AnimalClass = "Birds",
                     AnimalPicture = "/SeconImages/BarnOwl.jpg"
@@ -92,7 +92,7 @@ namespace TheZOO.Data
                     Description = "The Eastern Screech-Owl is a short, stocky bird, with a large head and almost no neck. Its wings are rounded; its tail is short and square. Pointed ear tufts are often raised, lending its head a distinctive silhouette.",
                     Name = "George",
                     Species = "EasterScreetch",
-                    CategoryId = 5,
+                    CategoryId = 3,
                     AnimalAge = 2,
                     AnimalClass = "Birds",
                     AnimalPicture = "/SeconImages/EasterScreetch.jpg"
@@ -102,7 +102,7 @@ namespace TheZOO.Data
                     Description = "Sharks are fishes and most have the typical fusiform body shape. Like other fishes, sharks are ectothermic, live in water, have fins, and breathe with gills.",
                     Name = "Keny",
                     Species = "Shark",
-                    CategoryId = 5,
+                    CategoryId = 1,
                     AnimalAge = 8,
                     AnimalClass = "Fish",
                     AnimalPicture = "/SeconImages/Shark.png"
@@ -112,70 +112,60 @@ namespace TheZOO.Data
                     Description = "Salmons include seven species of Pacific salmon and one species of Atlantic salmon. They’re found in tributaries of the Pacific and Atlantic Oceans, and most species are anadromous: They are born in streams and rivers, migrate out to the open sea, and then return to freshwater again to reproduce.",
                     Name = "Nemo",
                     Species = "Salmon",
-                    CategoryId = 5,
+                    CategoryId = 1,
                     AnimalAge = 7,
                     AnimalClass = "Fish",
                     AnimalPicture = "/SeconImages/Salmon.jpg"
                 },
                 new{
                     AnimalId = 10,
-                    Description = "",
-                    Name = "",
-                    Species = "",
-                    CategoryId = 5,
-                    AnimalAge = 5,
-                    AnimalClass = "",
-                    AnimalPicture = "/SeconImages/"
+                    Description = "Tree frogs are not a distinct taxonomic group of animals, but rather, the term refers generally to frogs that spend most of their time in trees or higher vegetation. There are about 800 species of tree frogs, some of which are classified as tree frogs, which are aquatic or terrestrial.",
+                    Name = "Merdith",
+                    Species = "Frog",
+                    CategoryId = 4,
+                    AnimalAge = 4,
+                    AnimalClass = "Amphibians",
+                    AnimalPicture = "/SeconImages/tree-frog.jpg"
                 },
                 new{
                     AnimalId = 11,
-                    Description = "",
-                    Name = "",
-                    Species = "",
-                    CategoryId = 5,
-                    AnimalAge = 5,
-                    AnimalClass = "",
-                    AnimalPicture = "/SeconImages/"
+                    Description = "Newts are small semi-aquatic amphibians that look like a cross between a frog and a lizard. Newts possess several interesting characteristics. For example, though they may look cute and harmless, they can be dangerous; toxins secreted through the skin as a defense mechanism could kill a person.",
+                    Name = "Neothon",
+                    Species = "newt",
+                    CategoryId = 4,
+                    AnimalAge = 3,
+                    AnimalClass = "Amphibians",
+                    AnimalPicture = "/SeconImages/newt.jpg"
                 },
                 new{
                     AnimalId = 12,
-                    Description = "",
-                    Name = "",
-                    Species = "",
-                    CategoryId = 5,
-                    AnimalAge = 5,
-                    AnimalClass = "",
-                    AnimalPicture = "/SeconImages/"
+                    Description = "Dolphins are small-toothed cetaceans easily recognizable by their curved mouths, which give them a permanent “smile.” There are 36 dolphin species, found in every ocean.",
+                    Name = "Tzvi",
+                    Species = "Dolphin",
+                    CategoryId = 2,
+                    AnimalAge = 4,
+                    AnimalClass = "Mammals",
+                    AnimalPicture = "/SeconImages/dolphin.jpg"
                 },
                 new{
                     AnimalId = 13,
-                    Description = "",
-                    Name = "",
-                    Species = "",
-                    CategoryId = 5,
-                    AnimalAge = 5,
-                    AnimalClass = "",
-                    AnimalPicture = "/SeconImages/"
+                    Description = "Giraffes are the world's tallest mammals, thanks to their towering legs and long necks. A giraffe's legs alone are taller than many humans—about 6 feet . These long legs allow giraffes to run as fast as 35 miles an hour over short distances and cruise comfortably at 10 miles an hour over longer distances.",
+                    Name = "Memel",
+                    Species = "Giraffe",
+                    CategoryId = 2,
+                    AnimalAge = 6,
+                    AnimalClass = "Mammals",
+                    AnimalPicture = "/SeconImages/giraffe.jpg"
                 },
                 new{
                     AnimalId = 14,
-                    Description = "",
-                    Name = "",
-                    Species = "",
-                    CategoryId = 5,
-                    AnimalAge = 5,
-                    AnimalClass = "",
-                    AnimalPicture = "/SeconImages/"
-                },
-                new{
-                    AnimalId = 15,
-                    Description = "",
-                    Name = "",
-                    Species = "",
-                    CategoryId = 5,
-                    AnimalAge = 5,
-                    AnimalClass = "",
-                    AnimalPicture = "/SeconImages/"
+                    Description = "Orang-utans have a characteristic ape-like shape, shaggy reddish fur and grasping hands and feet. Their powerful arms are stronger and longer than their legs and can reach 2m in length, long enough to touch their ankles when they stand.",
+                    Name = "Tapuz",
+                    Species = "Orangutan",
+                    CategoryId = 2,
+                    AnimalAge = 9,
+                    AnimalClass = "Mammals",
+                    AnimalPicture = "/SeconImages/orangutan.jpg"
                 }
                 );
             #endregion
