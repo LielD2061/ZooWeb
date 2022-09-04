@@ -32,9 +32,20 @@ namespace ThirdWebZoo.Controllers
             ViewBag.GetId = stam.AllAnimals!.ToList().Count;
             return View();
         }
+        [HttpPost]
         public IActionResult AddAnimal1(Animal animal)
         {
             _adminRepository.AddAnimal(animal);
+            return RedirectToAction("UsingAdmin");
+        }
+        public IActionResult DeleteAnimal()
+        {
+            var animal = _ar.GetData();
+            return View(animal);
+        }
+        public IActionResult DeleteAnimal1(int animalId)
+        {
+            _adminRepository.RemoveAnimal(animalId);
             return RedirectToAction("UsingAdmin");
         }
     }
