@@ -11,5 +11,6 @@ namespace ThirdWebZoo.Repositories
         public bool DeleteComment(int commentId);
         public bool EditComment(int commentId, string editedComment);
         public bool EditAnimal(Animal animal);
+        public bool CreateAdmin(Admin admin);
     }
 }
