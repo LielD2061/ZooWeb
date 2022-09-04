@@ -10,7 +10,7 @@
 
         <a class="btn btn-primary" value="check" asp-action="IndexSpec" asp-controller="Species"
        asp-route-categoryId="@item.CategoryId">
-            <img src=@item.AnimalPicture class="myPic image-responsive" />
+            <img src=@item.AnimalPicture class="myPic image-responsive"/>
         </a>
 
         <br />
@@ -33,19 +33,17 @@
         {
             <tr>
                 <td>
-                    @element.AnimalPicture
                     <div class="rounded float-start m-4">
                         <a class="btn btn-primary" value="check" asp-action="GetAnimal" asp-controller="Animals"
                        asp-route-animalid="@element.AnimalId">
+                       <img src=@element.AnimalPicture class="myPic image-responsive" />
                         </a>
                     </div>
                 </td>
                 <td>
                     <div class="rounded float-start m-4">
-                        @element.Name
                         <a class="btn btn-primary" value="check" asp-action="GetAnimal" asp-controller="Animals"
-                       asp-route-animalid="@element.AnimalId">
-                        </a>
+                       asp-route-animalid="@element.AnimalId">@element.Name</a>
                     </div>
                 </td>
                 <td>@element.Description</td>
