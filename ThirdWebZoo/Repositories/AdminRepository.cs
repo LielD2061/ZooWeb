@@ -12,9 +12,7 @@ namespace ThirdWebZoo.Repositories
         }
         public bool AddAnimal(Animal animal)
         {
-            var newanimal = new Animal();
-            newanimal = animal;
-            _context.animals.Add(newanimal);
+            _context.animals!.Add(animal);
             _context.SaveChanges();
             return true;
         }
@@ -78,6 +76,12 @@ namespace ThirdWebZoo.Repositories
             }
             _context.animals.Remove(animal1);
             _context.animals.Add(animal);
+            _context.SaveChanges();
+            return true;
+        }
+        public bool CreateAdmin(Admin admin)
+        {
+            _context.admins!.Add(admin);
             _context.SaveChanges();
             return true;
         }
