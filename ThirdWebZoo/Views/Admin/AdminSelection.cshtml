@@ -36,8 +36,6 @@
                 <td>
                     @element.AnimalPicture
                     <div class="rounded float-start m-4">
-                        <a class="btn btn-primary" value="check" asp-action="GetAnimal" asp-controller="Animals"asp-route-animalid="@element.AnimalId">
-                        </a>
                     </div>
                 </td>
                 <td>
@@ -45,8 +43,11 @@
                 </td>
                 <td>@element.Description</td>
                 <td>
-                    <form asp-controller="Admin" asp-action="DeleteAnimal1" method="post">
+                    <form asp-controller="Admin" asp-action="DeleteAnimal" method="post">
                         <input type="submit" name="AnimalId" value="@element.AnimalId" />
+                    </form>
+                    <form asp-controller="Admin" asp-action="GetToComments" method="post">
+                        <input placeholder="Comments" type="submit" name="AnimalId" value="@element.AnimalId" />
                     </form>
                 </td>
             </tr>

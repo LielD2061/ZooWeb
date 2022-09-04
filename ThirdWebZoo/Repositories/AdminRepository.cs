@@ -10,7 +10,6 @@ namespace ThirdWebZoo.Repositories
         {
             _context = context;
         }
-
         public bool AddAnimal(Animal animal)
         {
             var newanimal = new Animal();
@@ -19,7 +18,6 @@ namespace ThirdWebZoo.Repositories
             _context.SaveChanges();
             return true;
         }
-
         public bool AllowAdmin(Admin admin)
         {
             foreach (var checkadmin in _context.admins!)
@@ -29,7 +27,6 @@ namespace ThirdWebZoo.Repositories
             }
             return false;
         }
-
         public bool RemoveAnimal(int animalId)
         {
             foreach (var animal in _context.animals!)
@@ -41,6 +38,16 @@ namespace ThirdWebZoo.Repositories
             }
             _context.SaveChanges();
             return true;
+        }
+        public IEnumerable<Comment> GetAllComments(int animalId)
+        {
+            var comments = _context.comments;
+            foreach (var comment in comments)
+            {
+                if (comment.AnimalId == animalId)
+                    comments.Add(comment);
+            }
+            return comments;
         }
     }
 }

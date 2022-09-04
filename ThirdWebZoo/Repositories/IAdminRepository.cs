@@ -7,5 +7,6 @@ namespace ThirdWebZoo.Repositories
         public bool AllowAdmin(Admin admin);
         public bool AddAnimal(Animal animal);
         public bool RemoveAnimal(int animalId);
+        public IEnumerable<Comment> GetAllComments(int animalId);
     }
 }
