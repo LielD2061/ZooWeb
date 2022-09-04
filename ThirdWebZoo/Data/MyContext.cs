@@ -33,7 +33,8 @@ namespace TheZOO.Data
                     CategoryId = 3,
                     Species = "Eagle",
                     AnimalAge = 1,
-                    AnimalClass = "Birds"
+                    AnimalClass = "Birds",
+                    AnimalPicture = "/MainImages/Eagle.jpg"
                 },
 
                 new
@@ -44,18 +45,31 @@ namespace TheZOO.Data
                     Species = "Lion",
                     CategoryId = 2,
                     AnimalAge = 3,
-                    AnimalClass = "Mammals"
+                    AnimalClass = "Mammals",
+                    AnimalPicture = "/MainImages/Lion.jpg"
                 },
 
                 new
                 {
                     AnimalId = 3,
-                    Description = "also called serpent, any of more than 3,400 species of reptiles distinguished by their limbless condition and greatly elongated body and tail.",
+                    Description = "Also called serpent, any of more than 3,400 species of reptiles distinguished by their limbless condition and greatly elongated body and tail.",
                     Name = "Edmond",
                     Species = "Snake",
                     CategoryId = 5,
                     AnimalAge = 5,
-                    AnimalClass = "Reptiles"
+                    AnimalClass = "Reptiles",
+                    AnimalPicture = "/MainImages/Python.jpg"
+                },
+                new
+                {
+                    AnimalId = 4,
+                    Description = "Green iguanas are large beautiful looking lizards found in the Americas. Despite their name, Green iguanas can come in different colors and types.",
+                    Name = "Lizy",
+                    Species = "Iguana",
+                    CategoryId = 5,
+                    AnimalAge = 8,
+                    AnimalClass = "Reptiles",
+                    AnimalPicture = "/SecondImages/Iguana.jpeg"
                 }
                 );
 
