@@ -81,8 +81,13 @@ namespace ThirdWebZoo.Controllers
             _adminRepository.EditAnimal(animal);
             return RedirectToAction("AdminSelection");
         }
-        public IActionResult CreateAdmin()
+        public IActionResult GetCreateAdmin()
         {
+            return View();
+        }
+        public IActionResult CreateAdmin(Admin admin)
+        {
+            _adminRepository.CreateAdmin(admin);
             return View();
         }
 
