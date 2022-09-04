@@ -28,5 +28,18 @@ namespace ThirdWebZoo.Repositories
             }
             return false;
         }
+
+        public bool RemoveAnimal(int animalId)
+        {
+            foreach (var animal in _context.animals!)
+            {
+                if (animal.AnimalId.Equals(animalId))
+                {
+                    _context.animals.Remove(animal);
+                }
+            }
+            _context.SaveChanges();
+            return true;
+        }
     }
 }
