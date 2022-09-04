@@ -23,7 +23,19 @@ namespace ThirdWebZoo.Controllers
         {
             var adminview = _adminRepository.AllowAdmin(admin);
             ViewBag.AdminName = admin.AdminName;
-            return adminview ? View() : RedirectToAction("Index","Home");
+            if (adminview) return View(adminview);
+            return View();
+        }
+        public IActionResult AddAnimal()
+        {
+            var stam = _ar.GetData();
+            ViewBag.GetId = stam.AllAnimals!.ToList().Count;
+            return View();
+        }
+        public IActionResult AddAnimal1(Animal animal)
+        {
+            _adminRepository.AddAnimal(animal);
+            return RedirectToAction("UsingAdmin");
         }
     }
 }
