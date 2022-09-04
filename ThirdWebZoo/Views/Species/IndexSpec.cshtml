@@ -13,7 +13,7 @@
       @foreach (var element in Model.AllAnimals!)
         { 
         <tr>
-        <td>@element.AnimalPicture</td>
+        <td><img src=@element.AnimalPicture class="myPic image-responsive" /></td>
         <td>@element.Name</td>
         <td>@element.Description</td>
         <td>@element.Comments_Animals</td>
