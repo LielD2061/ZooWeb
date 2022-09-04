@@ -8,5 +8,13 @@ namespace ThirdWebZoo.Controllers
         {
             return View();
         }
+        public IActionResult SignIn()
+        {
+            return View();
+        }
+        public IActionResult SignUp()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
