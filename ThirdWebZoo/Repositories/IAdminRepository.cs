@@ -10,5 +10,6 @@ namespace ThirdWebZoo.Repositories
         public IEnumerable<Comment> GetAllComments(int animalId);
         public bool DeleteComment(int commentId);
         public bool EditComment(int commentId, string editedComment);
+        public bool EditAnimal(Animal animal);
     }
 }

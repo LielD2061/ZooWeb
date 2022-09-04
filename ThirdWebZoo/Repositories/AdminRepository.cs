@@ -66,5 +66,20 @@ namespace ThirdWebZoo.Repositories
             _context.SaveChanges();
             return true;
         }
+        public bool EditAnimal(Animal animal)
+        {
+            Animal animal1 = new Animal();
+            foreach (var a in _context.animals!)
+            {
+                if (a.AnimalId == animal.AnimalId)
+                {
+                    animal1 = a;
+                }
+            }
+            _context.animals.Remove(animal1);
+            _context.animals.Add(animal);
+            _context.SaveChanges();
+            return true;
+        }
     }
 }
