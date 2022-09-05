@@ -14,7 +14,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult SignUp()
         {
-            return RedirectToAction("Index");
+            return View();/*RedirectToAction("Index")*/
         }
     }
 }
