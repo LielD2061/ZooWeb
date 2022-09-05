@@ -19,8 +19,8 @@ namespace TheZOO.Data
             modelBuilder.Entity<User>().HasData(
                 new { UserId = 1, FirstName="Chen", LastName="Daidyan", Age=25, Email="Chen@hotmail.com", UserName="Chen_97", Password="Chen2103" }
                 );
-            modelBuilder.Entity<Category>().HasData(
 
+            modelBuilder.Entity<Category>().HasData(
                 new { CategoryId = 1, Name = "Fish", AnimalPicture = "/MainImages/Tuna.jpg" },
                 new { CategoryId = 2, Name = "Mammals", AnimalPicture = "/MainImages/Lion.jpg" },
                 new { CategoryId = 3, Name = "Birds", AnimalPicture = "/MainImages/Eagle.jpg" },
@@ -30,7 +30,6 @@ namespace TheZOO.Data
 
             #region Animal Seeding
             modelBuilder.Entity<Animal>().HasData(
-                
                 new{
                     AnimalId = 1,
                     Description = "any of many large, heavy-beaked, big-footed birds of prey belonging to the family Accipitridae.",
