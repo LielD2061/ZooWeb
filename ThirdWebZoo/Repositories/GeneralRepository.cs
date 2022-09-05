@@ -5,6 +5,8 @@ namespace ThirdWebZoo.Repositories
 {
     public class GeneralRepository : IGeneralRepository
     {
+        public static bool UserLoggedIn { get; set; }
+        public static bool AdminLoggedIn { get; set; }
         private MyContext _context;
         public GeneralRepository(MyContext context)
         {
@@ -82,5 +84,6 @@ namespace ThirdWebZoo.Repositories
             var stam = new Animal();
             return stam;
         }
+        
     }
 }
