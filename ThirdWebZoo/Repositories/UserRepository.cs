@@ -2,6 +2,9 @@
 {
     public class UserRepository : IUserRepository
     {
-
+        public void NewUser()
+        {
+            
+        }
     }
 }

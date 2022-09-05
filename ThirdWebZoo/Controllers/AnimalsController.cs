@@ -20,7 +20,7 @@ namespace ThirdWebZoo.Controllers
         public IActionResult NewComment(string newComment, int AnimalId)
         {
             _ar.GetNewComment(newComment, AnimalId);
-            return View();
+            return RedirectToAction("AllAnimals", "Animals");
         }
         public IActionResult GetAnimal(int animalId)
         {

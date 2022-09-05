@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ThirdWebZoo.Models.User
+
 @{
+    ViewData["Title"] = "Register";
 }
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="SignUp" asp-controller="User">
+
+  <div class="form-group">
+    <label for="FirstName">First Name</label>
+    <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name">
+  </div>
+
+  <div class="form-group">
+    <label for="LasttName">Last Name</label>
+    <input type="text" class="form-control" id="LasttName" placeholder="Enter Last Name">
+  </div>
+
+  <div class="form-group">
+      <label for="Age">Birth Date</label>
+      <input type="date" class="form-control" id="Age" placeholder="Your Birth Date"/>
+  </div>
+
+  <div class="form-group">
+    <label for="Password">Password</label>
+    <input type="password" class="form-control" id="Password" placeholder="Password">
+  </div>
+
+  <div class="form-group">
+    <label for="UserName">User Name</label>
+    <input type="text" class="form-control" id="UserName" placeholder="User Name">
+    <small id="UserHelp" class="form-text text-muted">This Name will display after you login</small>
+  </div>
+
+  <div class="form-group">
+      <label for="E-mail">E-mail</label>
+      <input type="email" class="form-control" id="Email" placeholder="Enter E-mail"/>
+  </div>
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  <br />
+  <button type="submit" class="btn btn-info">Submit</button>
+</form>
