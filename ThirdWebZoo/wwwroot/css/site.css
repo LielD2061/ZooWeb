@@ -26,3 +26,9 @@ body {
     width: 150px;
     height: 100px;
 }
+
+body {
+    background-image: url('/MainImages/BackGround.jpg');
+    flex:auto;
+    margin: 0;
+}

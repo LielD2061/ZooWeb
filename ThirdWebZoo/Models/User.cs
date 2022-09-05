@@ -16,7 +16,7 @@ namespace ThirdWebZoo.Models
         public string? FirstName { get; set; }
         [Required(ErrorMessage = "Please enter your last name")]
         public string? LastName { get; set; }
-        [Required(ErrorMessage = "Please enter your date of birth")]
+        [Required(ErrorMessage = "Please enter your age")]
         public int Age { get; set; }
     }
 }

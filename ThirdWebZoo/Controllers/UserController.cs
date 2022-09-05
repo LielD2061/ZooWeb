@@ -19,16 +19,20 @@ namespace ThirdWebZoo.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public IActionResult SignIn(User Password, User UserName)
+        {
+            if(_userData.IsExist(Password, UserName))
+                return RedirectToAction("Index");
+            return View();
+        }
         public IActionResult SignUp()
         {
             return View();
         }
-
         [HttpPost]
-        public IActionResult SignUp(User user,DateTime currentDate)
+        public IActionResult SignUp(User user)
         {
-            //user.Age = DateTime.Today.Add(-user.Age);
             _userData.NewUser(user);
             return RedirectToAction("SignUp","User");
         }
