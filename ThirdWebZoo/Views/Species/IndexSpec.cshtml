@@ -1,23 +1,32 @@
 ﻿@model ThirdWebZoo.Models.AllModel
 <h1>hey @ViewBag.Name</h1>
 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Portrait</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Comment</th>
-    </tr>
-  </thead>
-  <tbody>
-      @foreach (var element in Model.AllAnimals!)
-        { 
+    <thead>
         <tr>
-        <td><img src=@element.AnimalPicture class="myPic image-responsive" /></td>
-        <td>@element.Name</td>
-        <td>@element.Description</td>
-        <td>@element.Comments_Animals</td>
+            <th scope="col">Portrait</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Comment</th>
         </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in Model.AllAnimals!)
+        {
+            <tr>
+                <td><img src=@element.AnimalPicture class="myPic image-responsive" /></td>
+                <td>@element.Name</td>
+                <td>@element.Description</td>
+                <td>
+                    @if (element.Comments_Animals != null)
+                    {
+                        @element.Comments_Animals!.Count
+                    }
+                    else
+                    {
+                        @ViewBag.Empty
+                    }
+                </td>
+            </tr>
         }
-  </tbody>
+    </tbody>
 </table>

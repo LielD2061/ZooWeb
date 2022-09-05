@@ -19,7 +19,7 @@ namespace ThirdWebZoo.Controllers
         {
             AllModel allModel = new AllModel();
             allModel.AllAnimals = _ar.GetTwoHighestComments();
-            string empty = "";
+            string empty = "0";
             ViewBag.Empty = empty;
             return View(allModel);
         }
