@@ -1,4 +1,4 @@
-﻿
+﻿@model ThirdWebZoo.Models.AllModel
 @{
     ViewData["Title"] = "AdminSelection";
 }
@@ -34,7 +34,7 @@
         {
             <tr>
                 <td>
-                    @element.AnimalPicture
+                    <img src=@element.AnimalPicture class="myPic image-responsive"/>
                     <div class="rounded float-start m-4">
                     </div>
                 </td>

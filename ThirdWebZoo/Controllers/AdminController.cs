@@ -19,11 +19,15 @@ namespace ThirdWebZoo.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult UsingAdmin(Admin admin)
+        public IActionResult SignIn(Admin admin)
         {
-            var adminview = _adminRepository.AllowAdmin(admin);
+            bool adminview = _adminRepository.AllowAdmin(admin);
             ViewBag.AdminName = admin.AdminName;
-            if (adminview) return View(adminview);
+            return adminview ? RedirectToAction("UsingAdmin") : RedirectToAction("Index");
+        }
+        public IActionResult UsingAdmin()
+        {
+            ViewBag.Admin = HomeController.AdminLog = true;
             return View();
         }
         public IActionResult AddAnimal()
@@ -35,7 +39,7 @@ namespace ThirdWebZoo.Controllers
         [HttpPost]
         public IActionResult AddAnimal1(Animal animal)
         {
-            _adminRepository.AddAnimal(animal);
+            var addanimal = _adminRepository.CheckAddAnimal(animal);
             return RedirectToAction("UsingAdmin");
         }
         public IActionResult AdminSelection()
@@ -45,7 +49,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult DeleteAnimal(int animalId)
         {
-            _adminRepository.RemoveAnimal(animalId);
+            var remove = _adminRepository.CheckRemoveAnimal(animalId);
             return RedirectToAction("UsingAdmin");
         }
         public IActionResult GetToComments(int animalId)
@@ -63,7 +67,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult DeleteComment(int commentId)
         {
-            _adminRepository.DeleteComment(commentId);
+            var deletecomment = _adminRepository.CheckDeleteComment(commentId);
             return RedirectToAction("AdminSelection");
         }
         public IActionResult EditComment(int commentId, string editedcomment)
@@ -81,10 +85,18 @@ namespace ThirdWebZoo.Controllers
             _adminRepository.EditAnimal(animal);
             return RedirectToAction("AdminSelection");
         }
-        public IActionResult CreateAdmin()
+        public IActionResult GetCreateAdmin()
         {
             return View();
         }
-
+        public IActionResult CreateAdmin(Admin admin)
+        {
+            _adminRepository.CreateAdmin(admin);
+            return View();
+        }
+        public IActionResult LogOut()
+        {
+            return RedirectToAction("SignAdmin", "Home", new {isAdmin = false});
+        }
     }
 }

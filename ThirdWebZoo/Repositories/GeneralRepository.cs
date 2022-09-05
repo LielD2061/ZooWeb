@@ -5,6 +5,8 @@ namespace ThirdWebZoo.Repositories
 {
     public class GeneralRepository : IGeneralRepository
     {
+        public static bool UserLoggedIn { get; set; }
+        public static bool AdminLoggedIn { get; set; }
         private MyContext _context;
         public GeneralRepository(MyContext context)
         {
@@ -17,7 +19,7 @@ namespace ThirdWebZoo.Repositories
                 AllCategories = _context.categories,
                 AllAnimals = _context.animals,
                 AllAdmins = _context.admins,
-                AllComments = _context.comments
+                AllComments = _context.comments!.ToList()
             };
             return vm;
         }
@@ -25,7 +27,8 @@ namespace ThirdWebZoo.Repositories
         {
             var temp = new AllModel()
             {
-                AllAnimals = _context.animals
+                AllAnimals = _context.animals,
+                AllComments = _context.comments!.ToList()
             };
             if (categoryId == 0 || categoryId > 5) return temp;
             var temp1 = new AllModel();
@@ -81,5 +84,6 @@ namespace ThirdWebZoo.Repositories
             var stam = new Animal();
             return stam;
         }
+        
     }
 }

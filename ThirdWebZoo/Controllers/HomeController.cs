@@ -9,17 +9,30 @@ namespace ThirdWebZoo.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private IGeneralRepository _ar;
-
+        public static bool AdminLog = false;
+        public static bool UserLog = false;
         public HomeController(ILogger<HomeController> logger, IGeneralRepository ar)
         {
             _logger = logger;
             _ar = ar;
         }
+        public IActionResult SignAdmin(bool isAdmin)
+        {
+            AdminLog = isAdmin;
+            return RedirectToAction("Index");
+        }
+        public IActionResult SignUser(bool isUser)
+        {
+            AdminLog = isUser;
+            return RedirectToAction("Index");
+        }
         public IActionResult Index()
         {
             AllModel allModel = new AllModel();
             allModel.AllAnimals = _ar.GetTwoHighestComments();
-            string empty = "";
+            ViewBag.Admin = AdminLog;
+            ViewBag.User = UserLog;
+            string empty = "0";
             ViewBag.Empty = empty;
             return View(allModel);
         }

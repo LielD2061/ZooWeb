@@ -32,5 +32,13 @@ namespace ThirdWebZoo.Controllers
             _userData.NewUser(user);
             return RedirectToAction("SignUp","User");
         }
+        public IActionResult GetSignUpData()
+        {
+            if (!ModelState.IsValid)
+            {
+            return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
     }
 }
