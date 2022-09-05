@@ -14,6 +14,8 @@ namespace ThirdWebZoo.Controllers
         public IActionResult AllAnimals()
         {
             var animal = _ar.GetData();
+            string empty = "0";
+            ViewBag.Empty = empty;
             return View(animal);
         }
         [HttpPost]

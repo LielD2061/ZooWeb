@@ -17,7 +17,7 @@ namespace ThirdWebZoo.Repositories
                 AllCategories = _context.categories,
                 AllAnimals = _context.animals,
                 AllAdmins = _context.admins,
-                AllComments = _context.comments
+                AllComments = _context.comments!.ToList()
             };
             return vm;
         }
@@ -25,7 +25,8 @@ namespace ThirdWebZoo.Repositories
         {
             var temp = new AllModel()
             {
-                AllAnimals = _context.animals
+                AllAnimals = _context.animals,
+                AllComments = _context.comments!.ToList()
             };
             if (categoryId == 0 || categoryId > 5) return temp;
             var temp1 = new AllModel();

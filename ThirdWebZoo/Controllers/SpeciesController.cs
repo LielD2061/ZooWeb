@@ -16,6 +16,8 @@ namespace ThirdWebZoo.Controllers
             var animal = _ar.GetByCategory(categoryId);
             var category = _ar.CategoryName(categoryId);
             ViewBag.Name = category;
+            string empty = "0";
+            ViewBag.Empty = empty;
             return View(animal);
         }
     }
