@@ -24,7 +24,7 @@ namespace ThirdWebZoo.Controllers
             var adminview = _adminRepository.AllowAdmin(admin);
             ViewBag.AdminName = admin.AdminName;
             if (adminview) return View(adminview);
-            return View();
+            return adminview? View() : RedirectToAction("Index");
         }
         public IActionResult AddAnimal()
         {
@@ -35,7 +35,7 @@ namespace ThirdWebZoo.Controllers
         [HttpPost]
         public IActionResult AddAnimal1(Animal animal)
         {
-            _adminRepository.AddAnimal(animal);
+            var addanimal = _adminRepository.CheckAddAnimal(animal);
             return RedirectToAction("UsingAdmin");
         }
         public IActionResult AdminSelection()
@@ -45,7 +45,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult DeleteAnimal(int animalId)
         {
-            _adminRepository.RemoveAnimal(animalId);
+            var remove = _adminRepository.CheckRemoveAnimal(animalId);
             return RedirectToAction("UsingAdmin");
         }
         public IActionResult GetToComments(int animalId)
@@ -63,7 +63,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult DeleteComment(int commentId)
         {
-            _adminRepository.DeleteComment(commentId);
+            var deletecomment = _adminRepository.CheckDeleteComment(commentId);
             return RedirectToAction("AdminSelection");
         }
         public IActionResult EditComment(int commentId, string editedcomment)
