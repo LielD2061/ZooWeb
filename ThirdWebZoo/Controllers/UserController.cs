@@ -5,10 +5,10 @@ namespace ThirdWebZoo.Controllers
 {
     public class UserController : Controller
     {
-        private IUserRepository _ar;
-        public UserController(IUserRepository ar)
+        private IUserRepository _userData;
+        public UserController(IUserRepository ud)
         {
-            _ar = ar;
+            _userData = ud;
         }
         public IActionResult Index()
         {
@@ -21,8 +21,8 @@ namespace ThirdWebZoo.Controllers
         [HttpPost]
         public IActionResult SignUp(string firstName, string lastName, int age, string e_mail, string password, string userName)
         {
-            _ar.NewUser(firstName, lastName, age, e_mail, password, userName);
-            return View();/*RedirectToAction("Index", "Home")*/
+            _userData.NewUser(firstName, lastName, age, e_mail, password, userName);
+            return View();
         }
     }
 }

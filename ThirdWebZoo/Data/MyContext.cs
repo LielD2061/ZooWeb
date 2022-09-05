@@ -16,6 +16,9 @@ namespace TheZOO.Data
         public DbSet<User>? users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>().HasData(
+                new { UserId = 1, FirstName="Chen", LastName="Daidyan", Age=25, Email="Chen@hotmail.com", UserName="Chen_97", Password="Chen2103" }
+                );
             modelBuilder.Entity<Category>().HasData(
 
                 new { CategoryId = 1, Name = "Fish", AnimalPicture = "/MainImages/Tuna.jpg" },
