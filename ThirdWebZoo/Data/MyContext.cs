@@ -13,6 +13,7 @@ namespace TheZOO.Data
         public DbSet<Animal>? animals { get; set; }
         public DbSet<Comment>? comments { get; set; }
         public DbSet<Admin>? admins { get; set; }
+        public DbSet<User>? users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
