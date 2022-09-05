@@ -10,9 +10,9 @@ namespace ThirdWebZoo.Repositories
         {
             _userContext = myContext;
         }
-        public string NewUser(string firstName, string lastName, int age, string e_mail, string password, string userName)
+        public string NewUser(User user)
         {
-            _userContext.users!.Add(new User { FirstName = firstName, LastName = lastName, Age = age, Email = e_mail, Password = password, UserName = userName });
+            _userContext.Add(user);
             _userContext.SaveChanges();
             return "Congratiolations"; 
         }

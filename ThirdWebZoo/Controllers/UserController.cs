@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ThirdWebZoo.Models;
 using ThirdWebZoo.Repositories;
 
 namespace ThirdWebZoo.Controllers
@@ -18,11 +19,18 @@ namespace ThirdWebZoo.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult SignUp(string firstName, string lastName, int age, string e_mail, string password, string userName)
+
+        public IActionResult SignUp()
         {
-            _userData.NewUser(firstName, lastName, age, e_mail, password, userName);
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult SignUp(User user,DateTime currentDate)
+        {
+            //user.Age = DateTime.Today.Add(-user.Age);
+            _userData.NewUser(user);
+            return RedirectToAction("SignUp","User");
         }
     }
 }

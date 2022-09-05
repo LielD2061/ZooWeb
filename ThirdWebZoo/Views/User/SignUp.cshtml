@@ -5,37 +5,37 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form asp-action="SignUp" asp-controller="User">
+<form asp-action="SignUp" asp-controller="User" method="post">
 
   <div class="form-group">
     <label for="FirstName">First Name</label>
-    <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name">
+    <input asp-for="FirstName" type="text" class="form-control" id="FirstName" placeholder="Enter First Name">
   </div>
 
   <div class="form-group">
     <label for="LastName">Last Name</label>
-    <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name">
+    <input asp-for="LastName" type="text" class="form-control" id="LastName" placeholder="Enter Last Name">
   </div>
 
   <div class="form-group">
       <label for="Age">Birth Date</label>
-      <input type="date" class="form-control" id="Age" placeholder="Your Birth Date"/>
+      <input asp-for="Age" type="date" class="form-control" id="Age" placeholder="Your Birth Date"/>
   </div>
 
   <div class="form-group">
     <label for="Password">Password</label>
-    <input type="password" class="form-control" id="Password" placeholder="Password">
+    <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Password">
   </div>
 
   <div class="form-group">
     <label for="UserName">User Name</label>
-    <input type="text" class="form-control" id="UserName" placeholder="User Name">
+    <input asp-for="UserName" type="text" class="form-control" id="UserName" placeholder="User Name">
     <small id="UserHelp" class="form-text text-muted">This Name will display after you login</small>
   </div>
 
   <div class="form-group">
       <label for="E-mail">E-mail</label>
-      <input type="email" class="form-control" id="Email" placeholder="Enter E-mail"/>
+      <input asp-for="Email" type="email" class="form-control" id="Email" placeholder="Enter E-mail"/>
   </div>
   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   <br />
