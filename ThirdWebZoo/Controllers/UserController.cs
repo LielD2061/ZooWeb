@@ -20,7 +20,7 @@ namespace ThirdWebZoo.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult SignIn(User Password, User UserName)
+        public IActionResult SignIn(string Password, string UserName)
         {
             if(_userData.IsExist(Password, UserName))
                 return RedirectToAction("Index");

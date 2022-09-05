@@ -10,17 +10,7 @@ namespace ThirdWebZoo.Repositories
         {
             _userContext = myContext;
         }
-        //public IQueryable Values(User user)
-        //{
-        //    var values = from ud in _userContext.users
-        //                 where user.UserId == ud.UserId &&
-        //                 ud.UserName == user.UserName &&
-        //                 ud.FirstName == user.FirstName
-        //                 select ud;
-
-        //    return values;
-        //}
-        public bool IsExist(User Password, User UserName)
+        public bool IsExist(string Password, string UserName)
         {
             var spePassword = _userContext.users!.Contains(Password);
             var speUser = _userContext.users!.Contains(UserName);
