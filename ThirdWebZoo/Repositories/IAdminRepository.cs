@@ -5,12 +5,18 @@ namespace ThirdWebZoo.Repositories
     public interface IAdminRepository
     {
         public bool AllowAdmin(Admin admin);
-        public bool AddAnimal(Animal animal);
-        public bool RemoveAnimal(int animalId);
+        public void AddAnimal(Animal animal);
+        public bool CheckAddAnimal(Animal animal);
+        public void RemoveAnimal(int animalId);
+        public bool CheckRemoveAnimal(int animalId);
         public IEnumerable<Comment> GetAllComments(int animalId);
-        public bool DeleteComment(int commentId);
-        public bool EditComment(int commentId, string editedComment);
-        public bool EditAnimal(Animal animal);
-        public bool CreateAdmin(Admin admin);
+        public void DeleteComment(int commentId);
+        public bool CheckDeleteComment(int commentId);
+        public void EditComment(int commentId, string editedComment);
+        public bool CheckEditComment(int commentId, string editedComment);
+        public void EditAnimal(Animal animal);
+        public bool CheckEditAnimal(Animal animal);
+        public void CreateAdmin(Admin admin);
+        public bool CheckCreateAdmin(Admin admin);
     }
 }

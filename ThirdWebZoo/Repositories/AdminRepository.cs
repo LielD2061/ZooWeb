@@ -10,12 +10,6 @@ namespace ThirdWebZoo.Repositories
         {
             _context = context;
         }
-        public bool AddAnimal(Animal animal)
-        {
-            _context.animals!.Add(animal);
-            _context.SaveChanges();
-            return true;
-        }
         public bool AllowAdmin(Admin admin)
         {
             foreach (var checkadmin in _context.admins!)
@@ -25,7 +19,19 @@ namespace ThirdWebZoo.Repositories
             }
             return false;
         }
-        public bool RemoveAnimal(int animalId)
+        public void AddAnimal(Animal animal)
+        {
+            _context.animals!.Add(animal);
+            _context.SaveChanges();
+        }
+        public bool CheckAddAnimal(Animal animal)
+        {
+            AddAnimal(animal);
+            if (_context.animals!.Any(c => c.AnimalId == animal.AnimalId))
+                return true;
+            return false;
+        }
+        public void RemoveAnimal(int animalId)
         {
             foreach (var animal in _context.animals!)
             {
@@ -35,7 +41,13 @@ namespace ThirdWebZoo.Repositories
                 }
             }
             _context.SaveChanges();
-            return true;
+        }
+        public bool CheckRemoveAnimal(int animalId)
+        {
+            RemoveAnimal(animalId);
+            if (!_context.animals!.Any(a => a.AnimalId == animalId))
+                return true;
+            return false;
         }
         public IEnumerable<Comment> GetAllComments(int animalId)
         {
@@ -47,7 +59,7 @@ namespace ThirdWebZoo.Repositories
             }
             return comments;
         }
-        public bool DeleteComment(int commentId)
+        public void DeleteComment(int commentId)
         {
             foreach (var comment in _context.comments!)
             {
@@ -55,35 +67,65 @@ namespace ThirdWebZoo.Repositories
                     _context.comments.Remove(comment);
             }
             _context.SaveChanges();
-            return true;
         }
-        public bool EditComment(int commentId, string editedComment)
+        public bool CheckDeleteComment(int commentId)
+        {
+            DeleteComment(commentId);
+            if (_context.comments!.Any(c => c.CommentId == commentId))
+                return true;
+            return false;
+        }
+        public void EditComment(int commentId, string editedComment)
         {
             var comment = _context.comments!.First(c => c.CommentId == commentId);
             comment.Comments = editedComment;
             _context.SaveChanges();
-            return true;
         }
-        public bool EditAnimal(Animal animal)
+        public bool CheckEditComment(int commentId, string editedComment)
         {
-            Animal animal1 = new Animal();
+            EditComment(commentId, editedComment);
+            foreach (var comment in _context.comments!)
+            {
+                if (comment.CommentId == commentId && comment.Comments!.Equals(editedComment))
+                    return true;
+            }
+            return false;
+
+        }
+        public void EditAnimal(Animal animal)
+        {
+            Animal oldanimal = new Animal();
             foreach (var a in _context.animals!)
             {
                 if (a.AnimalId == animal.AnimalId)
                 {
-                    animal1 = a;
+                    oldanimal = a;
                 }
             }
-            _context.animals.Remove(animal1);
+            _context.animals.Remove(oldanimal);
             _context.animals.Add(animal);
             _context.SaveChanges();
-            return true;
         }
-        public bool CreateAdmin(Admin admin)
+        public bool CheckEditAnimal(Animal animal)
+        {
+            EditAnimal(animal);
+            foreach (var a in _context.animals!)
+            {
+                if (a.AnimalId == animal.AnimalId)
+                {
+
+                }
+            }
+            return false;
+        }
+        public void CreateAdmin(Admin admin)
         {
             _context.admins!.Add(admin);
             _context.SaveChanges();
-            return true;
+        }
+        public bool CheckCreateAdmin(Admin admin)
+        {
+            throw new NotImplementedException();
         }
     }
 }
