@@ -10,12 +10,13 @@ namespace ThirdWebZoo.Repositories
         {
             _userContext = myContext;
         }
-        public bool IsExist(string Password, string UserName)
+        public bool IsExist(string password, string userName)
         {
-            var spePassword = _userContext.users!.Contains(Password);
-            var speUser = _userContext.users!.Contains(UserName);
-            if(spePassword && speUser)
-                return true;
+            foreach (var user in _userContext.users!)
+            {
+                if (user.UserName == userName && user.Password == password)
+                    return true;
+            }
             return false;
         }
         public string NewUser(User user)
