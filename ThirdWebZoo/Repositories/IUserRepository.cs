@@ -1,7 +1,9 @@
-﻿namespace ThirdWebZoo.Repositories
+﻿using ThirdWebZoo.Models;
+
+namespace ThirdWebZoo.Repositories
 {
     public interface IUserRepository
     {
-        public void NewUser();
+        public string NewUser(User user);
     }
 }

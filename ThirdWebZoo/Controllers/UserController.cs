@@ -1,9 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ThirdWebZoo.Models;
+using ThirdWebZoo.Repositories;
 
 namespace ThirdWebZoo.Controllers
 {
     public class UserController : Controller
     {
+        private IUserRepository _userData;
+        public UserController(IUserRepository ud)
+        {
+            _userData = ud;
+        }
         public IActionResult Index()
         {
             return View();
@@ -12,9 +19,18 @@ namespace ThirdWebZoo.Controllers
         {
             return View();
         }
+
         public IActionResult SignUp()
         {
-            return View();/*RedirectToAction("Index")*/
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SignUp(User user,DateTime currentDate)
+        {
+            //user.Age = DateTime.Today.Add(-user.Age);
+            _userData.NewUser(user);
+            return RedirectToAction("SignUp","User");
         }
         public IActionResult GetSignUpData()
         {

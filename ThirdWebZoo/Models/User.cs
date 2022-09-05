@@ -5,6 +5,7 @@ namespace ThirdWebZoo.Models
     public class User
     {
         public int UserId { get; set; }
+
         [Required(ErrorMessage = "Please enter your name")]
         public string? UserName { get; set; }
         [Required(ErrorMessage = "Please enter your username")]

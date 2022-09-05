@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ThirdWebZoo.Models;
 using ThirdWebZoo.Repositories;
 
 namespace ThirdWebZoo.Controllers

@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddTransient<IGeneralRepository, GeneralRepository>();
 builder.Services.AddTransient<IAdminRepository, AdminRepository>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
 string connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
 builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddControllersWithViews();
