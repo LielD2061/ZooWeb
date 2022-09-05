@@ -19,12 +19,16 @@ namespace ThirdWebZoo.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult UsingAdmin(Admin admin)
+        public IActionResult SignIn(Admin admin)
         {
-            var adminview = _adminRepository.AllowAdmin(admin);
+            bool adminview = _adminRepository.AllowAdmin(admin);
             ViewBag.AdminName = admin.AdminName;
-            if (adminview) return View(adminview);
-            return adminview? View() : RedirectToAction("Index");
+            return adminview ? RedirectToAction("UsingAdmin") : RedirectToAction("Index");
+        }
+        public IActionResult UsingAdmin()
+        {
+            ViewBag.Admin = HomeController.AdminLog = true;
+            return View();
         }
         public IActionResult AddAnimal()
         {
@@ -90,6 +94,9 @@ namespace ThirdWebZoo.Controllers
             _adminRepository.CreateAdmin(admin);
             return View();
         }
-
+        public IActionResult LogOut()
+        {
+            return RedirectToAction("SignAdmin", "Home", new {isAdmin = false});
+        }
     }
 }
