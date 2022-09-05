@@ -23,8 +23,8 @@ namespace ThirdWebZoo.Controllers
         public IActionResult SignIn(string Password, string UserName)
         {
             if(_userData.IsExist(Password, UserName))
-                return RedirectToAction("Index");
-            return View();
+                return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index");
         }
         public IActionResult SignUp()
         {
