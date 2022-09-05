@@ -16,5 +16,13 @@ namespace ThirdWebZoo.Controllers
         {
             return View();/*RedirectToAction("Index")*/
         }
+        public IActionResult GetSignUpData()
+        {
+            if (!ModelState.IsValid)
+            {
+            return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
     }
 }
