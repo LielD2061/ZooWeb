@@ -42,6 +42,16 @@ namespace ThirdWebZoo.Controllers
             var comments = _adminRepository.GetAllComments(animalId);
             return View(comments);
         }
-
+        public IActionResult IndexSpec(int categoryId)
+        {
+            ViewBag.Admin = HomeController.AdminLog;
+            ViewBag.User = HomeController.UserLog;
+            var animal = _generalRepository.GetByCategory(categoryId);
+            var category = _generalRepository.CategoryName(categoryId);
+            ViewBag.Name = category;
+            string empty = "0";
+            ViewBag.Empty = empty;
+            return View(animal);
+        }
     }
 }
