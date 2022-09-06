@@ -21,7 +21,7 @@
 
   <div class="form-group col-md-6">
       <label for="Age">Birth Date</label>
-      <input asp-for="Age" type="text" class="form-control" id="Age" placeholder="Your Age"/>
+      <input asp-for="Age" type="number" class="form-control" id="Age" placeholder="Your Age"/>
       <span asp-validation-for="Age" class="ifValid"></span>
   </div>
 
@@ -49,3 +49,5 @@
 
   <button type="submit" class="btn btn-info">Submit</button>
 </form>
+
+<a asp-controller="Home" asp-action="Index">Back Home</a>
