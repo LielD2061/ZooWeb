@@ -32,8 +32,8 @@ namespace ThirdWebZoo.Controllers
         [HttpPost]
         public IActionResult SignUp(User user)
         {
-            _userData.NewUser(user);
-            return RedirectToAction("SignUp", "User");
+            var newuser = _userData.NewUser(user);
+            return newuser? RedirectToAction("SignUser", "Home", new { IsUser = true }) : RedirectToAction("SingUp");
         }
         public IActionResult GetSignUpData()
         {

@@ -19,12 +19,24 @@ namespace ThirdWebZoo.Repositories
             }
             return false;
         }
-        public string NewUser(User user)
+        public bool NewUser(User user)
         {
-            _userContext.Add(user);
-            _userContext.SaveChanges();
-            return "Congratiolations";
+            if (CheckIfInData(user))
+            {
+                _userContext.Add(user);
+                _userContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
-
+        public bool CheckIfInData(User user)
+        {
+            foreach (var usercheck in _userContext.users!)
+            {
+                if (usercheck.UserName == user.UserName)
+                    return false;
+            }
+            return true;
+        }
     }
 }

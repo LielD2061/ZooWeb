@@ -14,6 +14,7 @@ namespace ThirdWebZoo.Models
         [Required]
         public string? AnimalClass { get; set; }
         [Required]
+        [DataType(DataType.MultilineText)]
         public string? Description { get; set; }
         public string? AnimalPicture { get; set; }
         [Required]
