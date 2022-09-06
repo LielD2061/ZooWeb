@@ -50,6 +50,21 @@
                     }
                     @if (ViewBag.Admin == true)
                     {
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="GetCreateAdmin" asp-controller="Admin">Create Admin</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="GetDeleteAdmin" asp-controller="Admin">Delete Admin</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="GetCreateUser" asp-controller="Admin">Delete User</a>
+                            </li>
+                        </ul>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
                                 <a class="nav-link" asp-action="LogOut" asp-controller="Admin">Log out</a>

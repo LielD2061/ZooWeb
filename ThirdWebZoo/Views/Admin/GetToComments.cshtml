@@ -8,6 +8,8 @@
 {
     <div>@comment.CommentId</div>
     <div>@comment.Comments</div>
+    @if (ViewBag.Admin == true)
+    {
     <div>
         <a asp-action="DeleteComment" asp-controller="Admin" asp-route-commentId="@comment.CommentId">
             Delete Comment
@@ -20,4 +22,5 @@
         </div>
         <input type="submit" name="commentId" value="Edit" />
     </form>
+    }
 }

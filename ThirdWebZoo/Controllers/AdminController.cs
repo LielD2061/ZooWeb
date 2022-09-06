@@ -22,12 +22,7 @@ namespace ThirdWebZoo.Controllers
         {
             bool adminview = _adminRepository.AllowAdmin(admin);
             ViewBag.AdminName = admin.AdminName;
-            return adminview ? RedirectToAction("UsingAdmin") : RedirectToAction("Index");
-        }
-        public IActionResult UsingAdmin()
-        {
-            ViewBag.Admin = HomeController.AdminLog = true;
-            return View();
+            return adminview ? RedirectToAction("SignAdmin", "Home", new { isAdmin = true }) : RedirectToAction("Index");
         }
         public IActionResult AddAnimal()
         {
@@ -40,11 +35,6 @@ namespace ThirdWebZoo.Controllers
         {
             _adminRepository.CheckAddAnimal(animal);
             return RedirectToAction("AllAnimals", "Animals");
-        }
-        public IActionResult AdminSelection()
-        {
-            var animal = _ar.GetData();
-            return View(animal);
         }
         public IActionResult DeleteAnimal(int animalId)
         {
@@ -86,12 +76,13 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult GetCreateAdmin()
         {
+            ViewBag.Admin = HomeController.AdminLog;
             return View();
         }
         public IActionResult CreateAdmin(Admin admin)
         {
             _adminRepository.CreateAdmin(admin);
-            return View();
+            return RedirectToAction("SignAdmin", "Home", new { isAdmin = true });
         }
         public IActionResult LogOut()
         {
