@@ -13,6 +13,8 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult IndexSpec(int categoryId)
         {
+            ViewBag.Admin = HomeController.AdminLog;
+            ViewBag.User = HomeController.UserLog;
             var animal = _ar.GetByCategory(categoryId);
             var category = _ar.CategoryName(categoryId);
             ViewBag.Name = category;

@@ -23,7 +23,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult SignUser(bool isUser)
         {
-            AdminLog = isUser;
+            UserLog = isUser;
             return RedirectToAction("Index");
         }
         public IActionResult Index()

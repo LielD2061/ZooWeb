@@ -56,6 +56,14 @@
                             </li>
                         </ul>
                     }
+                    @if (ViewBag.User == true)
+                    {
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="LogOut" asp-controller="User">Log out</a>
+                            </li>
+                        </ul>
+                    }
                 </div>
             </div>
         </nav>

@@ -57,14 +57,17 @@
                         {
                             @ViewBag.Empty
                         }
-                    </div>
-                    <form asp-controller="Animals" asp-action="NewComment" method="post">
-                        <div>
-                            <input name="newComment" placeholder="Write Comment" />
-                            <input name="AnimalId" type="hidden" value="@element.AnimalId" />
                         </div>
-                        <input type="submit" name="AnimalId" value="comment" />
-                    </form>
+                        @if (ViewBag.User == true)
+                        {
+                        <form asp-controller="Animals" asp-action="NewComment" method="post">
+                            <div>
+                                <input name="newComment" placeholder="Write Comment" />
+                                <input name="AnimalId" type="hidden" value="@element.AnimalId" />
+                            </div>
+                            <input type="submit" name="AnimalId" value="comment" />
+                        </form>
+                        }
                 </td>
             </tr>
         }
