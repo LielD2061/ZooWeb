@@ -17,7 +17,7 @@ namespace TheZOO.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new { UserId = 1, FirstName="Chen", LastName="Daidyan", Age=25, Email="Chen@hotmail.com", UserName="Chen_97", Password="Chen2103" }
+                new { UserId = 1, FirstName="Chen", LastName="Daidyan", Age=25, Email="Chen@hotmail.com", UserName="Chen_97", Password="A" }
                 );
 
             modelBuilder.Entity<Category>().HasData(
