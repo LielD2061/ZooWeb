@@ -1,1 +1,4 @@
-﻿<a class="btn btn-warning" asp-area="" asp-controller="Admin" asp-action="Index">Admin Login</a>
+﻿@if (ViewBag.Admin != true && ViewBag.User != true)
+{
+<a class="btn btn-warning" asp-area="" asp-controller="Admin" asp-action="Index">Admin Login</a>
+}

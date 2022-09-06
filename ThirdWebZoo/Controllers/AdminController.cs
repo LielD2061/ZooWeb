@@ -38,8 +38,8 @@ namespace ThirdWebZoo.Controllers
         [HttpPost]
         public IActionResult AddAnimal1(Animal animal)
         {
-            var addanimal = _adminRepository.CheckAddAnimal(animal);
-            return RedirectToAction("UsingAdmin");
+            _adminRepository.CheckAddAnimal(animal);
+            return RedirectToAction("AllAnimals", "Animals");
         }
         public IActionResult AdminSelection()
         {
@@ -48,8 +48,8 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult DeleteAnimal(int animalId)
         {
-            var remove = _adminRepository.CheckRemoveAnimal(animalId);
-            return RedirectToAction("UsingAdmin");
+            _adminRepository.CheckRemoveAnimal(animalId);
+            return RedirectToAction("AllAnimals", "Animals");
         }
         public IActionResult GetToComments(int animalId)
         {
@@ -66,13 +66,13 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult DeleteComment(int commentId)
         {
-            var deletecomment = _adminRepository.CheckDeleteComment(commentId);
-            return RedirectToAction("AdminSelection");
+            _adminRepository.CheckDeleteComment(commentId);
+            return RedirectToAction("AllAnimals", "Animals");
         }
         public IActionResult EditComment(int commentId, string editedcomment)
         {
             _adminRepository.EditComment(commentId, editedcomment);
-            return RedirectToAction("AdminSelection");
+            return RedirectToAction("AllAnimals", "Animals");
         }
         public IActionResult EditAnimal(int animalId)
         {
@@ -82,7 +82,7 @@ namespace ThirdWebZoo.Controllers
         public IActionResult EditAnimal1(Animal animal)
         {
             _adminRepository.EditAnimal(animal);
-            return RedirectToAction("AdminSelection");
+            return RedirectToAction("AllAnimals", "Animals");
         }
         public IActionResult GetCreateAdmin()
         {
@@ -95,7 +95,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult LogOut()
         {
-            return RedirectToAction("SignAdmin", "Home", new {isAdmin = false});
+            return RedirectToAction("SignAdmin", "Home", new { isAdmin = false });
         }
     }
 }
