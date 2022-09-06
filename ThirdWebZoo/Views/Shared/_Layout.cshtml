@@ -14,7 +14,7 @@
 </head>
 <body class="MyBg">
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-md navbar-dark bg-light">
             <div class="container-fluid">
 
                 <a class="navbar-brand abs" asp-controller="Home" asp-action="Index"><img class="myLogo" src="/MainImages/zooLogo.png" /></a>
@@ -27,13 +27,13 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" asp-action="Index" asp-controller="Home">Home</a>
+                            <a style="color:black" class="nav-link" asp-action="Index" asp-controller="Home">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" asp-controller="Animals" asp-action="AllAnimals">Explore Our ZOO</a>
+                            <a style="color:black" class="nav-link" asp-controller="Animals" asp-action="AllAnimals">Explore Our ZOO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="User" asp-action="Index">Buy a Ticket</a>
+                            <a style="color:black" class="nav-link" asp-controller="User" asp-action="Index">Buy a Ticket</a>
                         </li>
                     </ul>
 
@@ -41,10 +41,10 @@
                     {
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" asp-action="SignIn" asp-controller="User">Login</a>
+                                <a style="color:black" class="nav-link" asp-action="SignIn" asp-controller="User">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-action="SignUp" asp-controller="User">Sign Up</a>
+                                <a style="color:black" class="nav-link" asp-action="SignUp" asp-controller="User">Sign Up</a>
                             </li>
                         </ul>
                     }
@@ -67,7 +67,7 @@
                         </ul>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" asp-action="LogOut" asp-controller="Admin">Log out</a>
+                                <a style="color:black" class="nav-link" asp-action="LogOut" asp-controller="Admin">Log out</a>
                             </li>
                         </ul>
                     }
@@ -75,7 +75,7 @@
                     {
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" asp-action="LogOut" asp-controller="User">Log out</a>
+                                <a style="color:black" class="nav-link" asp-action="LogOut" asp-controller="User">Log out</a>
                             </li>
                         </ul>
                     }
