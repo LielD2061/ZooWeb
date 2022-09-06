@@ -11,6 +11,7 @@
     <div class="form-group">
         <label for="Password">Password</label>
         <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Enter your Password"/>
+        <span asp-validation-for="Password"></span>
     </div>
 
     <button type="submit" class="btn btn-info">Submit</button>

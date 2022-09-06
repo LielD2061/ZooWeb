@@ -9,11 +9,12 @@ namespace ThirdWebZoo.Models
         [Required(ErrorMessage = "Please enter your name")]
         public string? UserName { get; set; }
 
-        [Required(ErrorMessage = "Please enter your username")]
+        [Required(ErrorMessage = "Please enter your Password")]
         public string? Password { get; set; }
 
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Please enter your Email")]
+        [RegularExpression(".+@+\\..+")]
         public string? Email { get; set; }
 
         [Required(ErrorMessage = "Please enter your first name")]
@@ -23,6 +24,7 @@ namespace ThirdWebZoo.Models
         public string? LastName { get; set; }
 
         [Required(ErrorMessage = "Please enter your age")]
+        [Range (5, 99)]
         public int Age { get; set; }
     }
 }
