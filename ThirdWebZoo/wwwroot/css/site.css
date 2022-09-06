@@ -36,3 +36,8 @@ body {
     font-weight:bold;
     color:red;
 }
+
+.plusBtn {
+    width:95px;
+    height:95px;
+}
