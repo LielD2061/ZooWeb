@@ -42,5 +42,6 @@ namespace ThirdWebZoo.Controllers
             var comments = _adminRepository.GetAllComments(animalId);
             return View(comments);
         }
+
     }
 }

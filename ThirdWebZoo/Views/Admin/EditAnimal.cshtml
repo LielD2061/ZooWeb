@@ -57,10 +57,10 @@
     <br />
     <div class="row">
         <div class="col-lg-offset-4 col-lg-8">
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary" onclick="alert(editMsg)">Edit</button>
         </div>
     </div>
-    <input asp-for="AnimalId" type="hidden" value="@Model.AnimalId" />
+    <input asp-for="AnimalId" type="hidden" value="@Model.AnimalId"/>
 </form>
 
 <a asp-controller="Animals" asp-action="AllAnimals">Back To All</a>
