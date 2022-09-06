@@ -6,37 +6,46 @@
 <h1>@ViewData["Title"]</h1>
 
 <form asp-action="SignUp" asp-controller="User" method="post">
-  <div class="form-group">
+
+  <div class="form-group col-md-6">
     <label for="FirstName">First Name</label>
     <input asp-for="FirstName" type="text" class="form-control" id="FirstName" placeholder="Enter First Name"> 
+    <span asp-validation-for="FirstName" class="ifValid"></span>
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-6">
     <label for="LastName">Last Name</label>
     <input asp-for="LastName" type="text" class="form-control" id="LastName" placeholder="Enter Last Name">
+    <span asp-validation-for="LastName" class="ifValid"></span>
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-6">
       <label for="Age">Birth Date</label>
       <input asp-for="Age" type="text" class="form-control" id="Age" placeholder="Your Age"/>
+      <span asp-validation-for="Age" class="ifValid"></span>
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-6">
     <label for="Password">Password</label>
     <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Password">
+    <span asp-validation-for="Password" class="ifValid"></span>
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-6">
     <label for="UserName">User Name</label>
     <input asp-for="UserName" type="text" class="form-control" id="UserName" placeholder="User Name">
     <small id="UserHelp" class="form-text text-muted">This Name will display after you login</small>
+    <span asp-validation-for="UserName" class="ifValid"></span>
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-6">
       <label for="E-mail">E-mail</label>
       <input asp-for="Email" type="email" class="form-control" id="Email" placeholder="Enter E-mail"/>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <span asp-validation-for="Email" class="ifValid"></span>
   </div>
-  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
   <br />
+
   <button type="submit" class="btn btn-info">Submit</button>
 </form>
