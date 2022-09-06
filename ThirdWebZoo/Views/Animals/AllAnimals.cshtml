@@ -22,7 +22,7 @@
 {
     <br />
     <form asp-controller="Admin" asp-action="AddAnimal" method="post">
-        <button type="submit"><img class="plusBtn" src="~/MainImages/Plus.jpg"/></button>
+        <button type="submit"><img class="plusBtn" src="~/MainImages/Plus.jpg" /></button>
         <input class="mt-4 btn btn-outline-light" type="submit" asp-controller="Admin" asp-action="AddAnimal">
     </form>
 }
@@ -92,6 +92,7 @@
     </tbody>
 </table>
 
+<a asp-controller="Animals" asp-action="AllAnimals"><img src="~/MainImages/button.png"/></a>
+<br />
 @await Html.PartialAsync("_MapBtnPartialView")
 
-<a asp-controller="Animals" asp-action="AllAnimals"><img src="~/MainImages/button.png"/></a>
