@@ -18,7 +18,12 @@
        asp-route-categoryId="@item.CategoryId"> @item.Name </a>
     </div>
 }
-
+@if (ViewBag.Admin == true)
+{
+    <form asp-controller="Admin" asp-action="AddAnimal" method="post">
+        <input type="submit" value="Add Animal" />
+    </form>
+}
 <table class="table">
     <thead>
         <tr>
@@ -57,17 +62,29 @@
                         {
                             @ViewBag.Empty
                         }
-                        </div>
-                        @if (ViewBag.User == true)
+                        @if (ViewBag.User == true || ViewBag.Admin)
                         {
-                        <form asp-controller="Animals" asp-action="NewComment" method="post">
-                            <div>
-                                <input name="newComment" placeholder="Write Comment" />
-                                <input name="AnimalId" type="hidden" value="@element.AnimalId" />
-                            </div>
-                            <input type="submit" name="AnimalId" value="comment" />
-                        </form>
+                            <form asp-controller="Animals" asp-action="NewComment" method="post">
+                                <div>
+                                    <input name="newComment" placeholder="Write Comment" />
+                                    <input name="AnimalId" type="hidden" value="@element.AnimalId" />
+                                </div>
+                                <input type="submit" name="AnimalId" value="comment" />
+                            </form>
                         }
+                        @if (ViewBag.Admin == true)
+                        {
+                            <form asp-controller="Admin" asp-action="DeleteAnimal" method="post">
+                                <input type="hidden" name="AnimalId" value="@element.AnimalId" />
+                                <input type="submit" name="AnimalId" value="Delete" />
+                            </form>
+                            <form asp-controller="Admin" asp-action="EditAnimal" method="post">
+                                <input type="hidden" name="AnimalId" value="@element.AnimalId" />
+                                <input type="submit" name="AnimalId" value="Edit" />
+
+                            </form>
+                        }
+                    </div>
                 </td>
             </tr>
         }
