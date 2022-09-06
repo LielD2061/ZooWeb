@@ -12,8 +12,18 @@
     <br />
     @ViewBag.AnimalDescription
 </p>
-
-<h3>Comments</h3>
+@if (ViewBag.User == true || ViewBag.Admin)
+{
+    <h4>Add Comment</h4>
+    <form asp-controller="Animals" asp-action="NewComment" method="post">
+        <div>
+            <input name="newComment" placeholder="Write Comment" />
+            <input name="AnimalId" type="hidden" value="@ViewBag.AnimalId" />
+        </div>
+        <input type="submit" name="AnimalId" value="comment" />
+    </form>
+}
+<h4>Comments</h4>
 @if (Model != null)
 {
     @foreach (var c in Model)

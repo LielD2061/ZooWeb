@@ -86,6 +86,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult GetDeleteAdmin()
         {
+            ViewBag.Admin = HomeController.AdminLog;
             return View(_adminRepository.GetAllAdmin());
         }
         public IActionResult DeleteAdmin(int adminId)
@@ -95,6 +96,7 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult GetDeleteUser()
         {
+            ViewBag.Admin = HomeController.AdminLog;
             return View(_adminRepository.GetAllUsers());
         }
         public IActionResult DeleteUser(int userId)

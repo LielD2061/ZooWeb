@@ -29,12 +29,15 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult GetAnimal(int animalId)
         {
+            ViewBag.Admin = HomeController.AdminLog;
+            ViewBag.User = HomeController.UserLog;
             var selectedanimal = _generalRepository.GetAnimal(animalId);
             ViewBag.AnimalName = selectedanimal.Name;
             ViewBag.Animalspecies = selectedanimal.Species;
             ViewBag.AnimalDescription = selectedanimal.Description;
             ViewBag.Animalclass = selectedanimal.AnimalClass;
             ViewBag.Animalage = selectedanimal.AnimalAge;
+            ViewBag.AnimalId = selectedanimal.AnimalId;
 
             var comments = _adminRepository.GetAllComments(animalId);
             return View(comments);
