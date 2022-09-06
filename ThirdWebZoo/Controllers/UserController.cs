@@ -22,8 +22,11 @@ namespace ThirdWebZoo.Controllers
         [HttpPost]
         public IActionResult SignIn(string Password, string UserName)
         {
+            if(ModelState.IsValid)
+            {
             if(_userData.IsExist(Password, UserName))
                 return RedirectToAction("Index", "Home");
+            }
             return RedirectToAction("Index");
         }
         public IActionResult SignUp()
