@@ -13,7 +13,6 @@ namespace ThirdWebZoo.Controllers
             _ar = ar;
             _adminRepository = adminRepository;
         }
-
         public IActionResult Index()
         {
             return View();

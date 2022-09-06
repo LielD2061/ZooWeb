@@ -11,10 +11,6 @@ namespace ThirdWebZoo.Controllers
         {
             _userData = ud;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         public IActionResult SignIn()
         {
             return View();
@@ -22,10 +18,10 @@ namespace ThirdWebZoo.Controllers
         [HttpPost]
         public IActionResult SignIn(string Password, string UserName)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-            if(_userData.IsExist(Password, UserName))
-                return RedirectToAction("Index", "Home");
+                if (_userData.IsExist(Password, UserName))
+                    return RedirectToAction("SignUser", "Home", new { isUser = true});
             }
             return RedirectToAction("Index");
         }
@@ -37,15 +33,19 @@ namespace ThirdWebZoo.Controllers
         public IActionResult SignUp(User user)
         {
             _userData.NewUser(user);
-            return RedirectToAction("SignUp","User");
+            return RedirectToAction("SignUp", "User");
         }
         public IActionResult GetSignUpData()
         {
             if (!ModelState.IsValid)
             {
-            return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home");
             }
             return View();
+        }
+        public IActionResult LogOut()
+        {
+            return RedirectToAction("SignUser", "Home", new { isUser = false });
         }
     }
 }

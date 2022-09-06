@@ -12,6 +12,8 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult AllAnimals()
         {
+            ViewBag.Admin = HomeController.AdminLog;
+            ViewBag.User = HomeController.UserLog;
             var animal = _ar.GetData();
             string empty = "0";
             ViewBag.Empty = empty;
@@ -25,6 +27,8 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult GetAnimal(int animalId)
         {
+            ViewBag.Admin = HomeController.AdminLog;
+            ViewBag.User = HomeController.UserLog;
             var pickedanimal = _ar.GetAnimal(animalId);
             ViewBag.AnimalName = pickedanimal.Name;
             return View(pickedanimal);
