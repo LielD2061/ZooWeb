@@ -128,5 +128,53 @@ namespace ThirdWebZoo.Repositories
         {
             throw new NotImplementedException();
         }
+        public IEnumerable<Admin> GetAllAdmin()
+        {
+            var admins = new List<Admin>();
+            foreach (var admin in _context.admins!)
+            {
+                admins.Add(admin);
+            }
+            return admins;
+        }
+        public bool DeleteAdmin(int adminId)
+        {
+            var admins = _context.admins!;
+            var deleteadmin = new Admin();
+            foreach (var admin in admins)
+            {
+                if (admin.AdminId == adminId)
+                {
+                    deleteadmin = admin;
+                }
+            }
+            _context.admins!.Remove(deleteadmin);
+            _context.SaveChanges();
+            return true;
+        }
+        public IEnumerable<User> GetAllUsers()
+        {
+            var users = new List<User>();
+            foreach (var user in _context.users!)
+            {
+                users.Add(user);
+            }
+            return users;
+        }
+        public bool DeleteUser(int userId)
+        {
+            var users = _context.users!;
+            var deleteuser = new User();
+            foreach (var user in users)
+            {
+                if (user.UserId == userId)
+                {
+                    deleteuser = user;
+                }
+            }
+            _context.users!.Remove(deleteuser);
+            _context.SaveChanges();
+            return true;
+        }
     }
 }

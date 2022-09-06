@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ThirdWebZoo.Models.User>
+@{
+    ViewData["Title"] = "GetDeleteUser";
+}
+
+<h1>Delete User</h1>
+
+@foreach (var user in Model)
+{
+    <ul>
+        <li>
+            <div>
+                @user.FirstName @user.LastName
+                <br />
+                <form asp-action="DeleteUser" asp-controller="Admin">
+                    <input type="hidden" name="userId" value="@user.UserId" />
+                    <input type="submit" value="Delete"/>
+                </form>
+            </div>
+        </li>
+    </ul>
+}
+<a asp-controller="Home" asp-action="Index">Back Home</a>

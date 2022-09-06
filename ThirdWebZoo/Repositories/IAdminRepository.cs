@@ -18,5 +18,9 @@ namespace ThirdWebZoo.Repositories
         public bool CheckEditAnimal(Animal animal);
         public void CreateAdmin(Admin admin);
         public bool CheckCreateAdmin(Admin admin);
+        public IEnumerable<Admin> GetAllAdmin();
+        public bool DeleteAdmin(int adminId);
+        public IEnumerable<User> GetAllUsers();
+        public bool DeleteUser(int userId);
     }
 }

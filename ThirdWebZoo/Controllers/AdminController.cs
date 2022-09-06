@@ -84,6 +84,24 @@ namespace ThirdWebZoo.Controllers
             _adminRepository.CreateAdmin(admin);
             return RedirectToAction("SignAdmin", "Home", new { isAdmin = true });
         }
+        public IActionResult GetDeleteAdmin()
+        {
+            return View(_adminRepository.GetAllAdmin());
+        }
+        public IActionResult DeleteAdmin(int adminId)
+        {
+            _adminRepository.DeleteAdmin(adminId);
+            return RedirectToAction("SignAdmin", "Home", new { isAdmin = true });
+        }
+        public IActionResult GetDeleteUser()
+        {
+            return View(_adminRepository.GetAllUsers());
+        }
+        public IActionResult DeleteUser(int userId)
+        {
+            _adminRepository.DeleteUser(userId);
+            return RedirectToAction("SignAdmin", "Home", new { isAdmin = true });
+        }
         public IActionResult LogOut()
         {
             return RedirectToAction("SignAdmin", "Home", new { isAdmin = false });
