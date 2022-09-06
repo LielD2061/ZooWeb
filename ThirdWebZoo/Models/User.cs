@@ -14,7 +14,7 @@ namespace ThirdWebZoo.Models
 
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Please enter your Email")]
-        [RegularExpression(".+@+\\..+")]
+        [RegularExpression(".+@.+\\..+")]
         public string? Email { get; set; }
 
         [Required(ErrorMessage = "Please enter your first name")]
