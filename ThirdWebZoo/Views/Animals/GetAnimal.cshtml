@@ -12,7 +12,7 @@
     <br />
     @ViewBag.AnimalDescription
 </p>
-@if (ViewBag.User == true || ViewBag.Admin)
+@if (ViewBag.User == true || ViewBag.Admin == true)
 {
     <h4>Add Comment</h4>
     <form asp-controller="Animals" asp-action="NewComment" method="post">
@@ -22,6 +22,8 @@
         </div>
         <input type="submit" name="AnimalId" value="comment" />
     </form>
+    <a class="btn btn-light" value="check" asp-action="GetBorrow" asp-controller="User"
+   asp-route-animalid="@ViewBag.AnimalId">Borrow @ViewBag.AnimalName</a>
 }
 <h4>Comments</h4>
 @if (Model != null)

@@ -7,9 +7,11 @@ namespace ThirdWebZoo.Controllers
     public class UserController : Controller
     {
         private IUserRepository _userData;
-        public UserController(IUserRepository ud)
+        private IGeneralRepository _generalRepository;
+        public UserController(IUserRepository ud, IGeneralRepository generalRepository)
         {
             _userData = ud;
+            _generalRepository = generalRepository;
         }
         public IActionResult SignIn()
         {
@@ -42,6 +44,13 @@ namespace ThirdWebZoo.Controllers
                 return RedirectToAction("Index", "Home");
             }
             return View();
+        }
+        public IActionResult GetBorrow(int animalId)
+        {
+            ViewBag.Admin = HomeController.AdminLog;
+            ViewBag.User = HomeController.UserLog;
+            _generalRepository.GetAnimal(animalId);
+            return RedirectToAction("AllAnimals", "Animals");
         }
         public IActionResult LogOut()
         {

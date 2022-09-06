@@ -8,7 +8,7 @@
 {
     <div class="rounded float-start m-4">
 
-        <a class="btn btn-light" value="check" asp-action="IndexSpec" asp-controller="Species"
+        <a class="btn btn-light" value="check" asp-action="IndexSpec" asp-controller="Animals"
        asp-route-categoryId="@item.CategoryId">
             <img src=@item.AnimalPicture class="myPic image-responsive" />
         </a>
@@ -64,26 +64,26 @@
                         {
                             @ViewBag.Empty
                         }
-                        @if (ViewBag.User == true || ViewBag.Admin)
+                        @if (ViewBag.User == true || ViewBag.Admin == true)
                         {
                             <form asp-controller="Animals" asp-action="NewComment" method="post">
                                 <div>
                                     <input name="newComment" placeholder="Write Comment" />
                                     <input name="AnimalId" type="hidden" value="@element.AnimalId" />
                                 </div>
-                                <input type="submit" name="AnimalId" value="comment" onclick="alert(msg)"/>
+                                <input type="submit" name="AnimalId" value="comment" onclick="alert(msg)" />
                             </form>
                         }
                         @if (ViewBag.Admin == true)
                         {
                             <form asp-controller="Admin" asp-action="DeleteAnimal" method="post">
                                 <input type="hidden" name="AnimalId" value="@element.AnimalId" />
-                                <input type="submit" name="AnimalId" value="Delete" onclick="alert(deleteMsg)"/>
+                                <input type="submit" name="AnimalId" value="Delete" onclick="alert(deleteMsg)" />
                             </form>
 
                             <form asp-controller="Admin" asp-action="EditAnimal" method="post">
                                 <input type="hidden" name="AnimalId" value="@element.AnimalId" />
-                                <input type="submit" name="AnimalId" value="Edit"/>
+                                <input type="submit" name="AnimalId" value="Edit" />
                             </form>
                         }
                     </div>
