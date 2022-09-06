@@ -1,7 +1,29 @@
-﻿
+﻿@model IEnumerable<ThirdWebZoo.Models.Comment>
 @{
     ViewData["Title"] = "GetAnimal";
 }
 
 <h1>Meet @ViewBag.AnimalName</h1>
+<br />
+<p>@ViewBag.AnimalName is @ViewBag.Animalspecies, which is under the @ViewBag.Animalclass family</p>
+<p>It's age is: @ViewBag.Animalage</p>
+<p>
+    About @ViewBag.AnimalName
+    <br />
+    @ViewBag.AnimalDescription
+</p>
 
+<h3>Comments</h3>
+@if (Model != null)
+{
+    @foreach (var c in Model)
+    {
+        <div>
+            <ul>
+                <li>
+                    @c.Comments
+                </li>
+            </ul>
+        </div>
+    }
+}

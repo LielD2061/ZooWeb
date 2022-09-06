@@ -51,13 +51,14 @@ namespace ThirdWebZoo.Repositories
         }
         public IEnumerable<Comment> GetAllComments(int animalId)
         {
-            var comments = _context.comments;
+            var comments = _context.comments!.ToList();
+            List<Comment> sendComments = new List<Comment>();
             foreach (var comment in comments)
             {
                 if (comment.AnimalId == animalId)
-                    comments.Add(comment);
+                    sendComments.Add(comment);
             }
-            return comments;
+            return sendComments;
         }
         public void DeleteComment(int commentId)
         {
