@@ -75,6 +75,13 @@ namespace ThirdWebZoo.Controllers
         public IActionResult EditAnimal(int animalId)
         {
             var getanimal = _ar.GetAnimal(animalId);
+            var stam = _ar.GetData();
+            ViewBag.GetId = stam.AllAnimals!.ToList().Count;
+            ViewBag.Category1 = _ar.CategoryName(1);
+            ViewBag.Category2 = _ar.CategoryName(2);
+            ViewBag.Category3 = _ar.CategoryName(3);
+            ViewBag.Category4 = _ar.CategoryName(4);
+            ViewBag.Category5 = _ar.CategoryName(5);
             return View(getanimal);
         }
         public IActionResult EditAnimal1(Animal animal)
