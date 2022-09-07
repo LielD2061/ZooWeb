@@ -5,6 +5,10 @@
 }
 <h1>@ViewData["Title"]</h1>
 
+<div class="g-signin2" data-onsuccess="onSignIn">
+    <button href="https://apis.google.com/js/platform.js" async defer">Google SignIn</button>
+</div>
+
 <form asp-action="SignUp" asp-controller="User" method="post">
 
   <div class="form-group col-md-6">

@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using ServiceStack.Text;
 using TheZOO.Data;
 using ThirdWebZoo.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddTransient<IGeneralRepository, GeneralRepository>();
@@ -19,6 +22,21 @@ using (var scope = app.Services.CreateScope())
     ctx.Database.EnsureDeleted();
     ctx.Database.EnsureCreated();
 }
+
+services.AddAuthentication().AddGoogle(googleOptions =>
+{
+    googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
+    googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+});
+
+builder.Services.AddAuthentication()
+   .AddGoogle(options =>
+   {
+       IConfigurationSection googleAuthNSection =
+       Config.GetSection("Authentication:Google");
+       options.ClientId = googleAuthNSection["ClientId"];
+       options.ClientSecret = googleAuthNSection["ClientSecret"];
+   });
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
