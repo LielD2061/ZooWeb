@@ -1,4 +1,4 @@
-﻿@model ThirdWebZoo.Models.AllModel
+﻿@model IEnumerable<ThirdWebZoo.Models.Animal>
 @{
 }
 <br />
@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var animal in Model.AllAnimals!)
+        @foreach (var animal in Model)
         {
             <tr>
                 <td>@animal.AnimalId</td>
