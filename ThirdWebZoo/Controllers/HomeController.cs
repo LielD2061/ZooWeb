@@ -8,13 +8,13 @@ namespace ThirdWebZoo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private IGeneralRepository _ar;
+        private readonly IGeneralRepository _generalrepository;
         public static bool AdminLog = false;
         public static bool UserLog = false;
-        public HomeController(ILogger<HomeController> logger, IGeneralRepository ar)
+        public HomeController(/*ILogger<HomeController> logger,*/ IGeneralRepository generalrepository)
         {
-            _logger = logger;
-            _ar = ar;
+            //_logger = logger;
+            _generalrepository = generalrepository;
         }
         public IActionResult SignAdmin(bool isAdmin)
         {
@@ -28,13 +28,12 @@ namespace ThirdWebZoo.Controllers
         }
         public IActionResult Index()
         {
-            AllModel allModel = new AllModel();
-            allModel.AllAnimals = _ar.GetTwoHighestComments();
+            IEnumerable<Animal> allAnimals = _generalrepository.GetTwoHighestComments();
             ViewBag.Admin = AdminLog;
             ViewBag.User = UserLog;
             string empty = "0";
             ViewBag.Empty = empty;
-            return View(allModel);
+            return View(allAnimals);
         }
         public IActionResult Map()
         {
