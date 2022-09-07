@@ -5,17 +5,17 @@
 <form asp-controller="User" asp-action="SignIn" method="post">
     <div class="form-group col-md-6">
         <label for="UserName">User Name</label>
-        <input asp-for="UserName" type="text" class="form-control" id="UserName" placeholder="Enter User Name"/>
+        <input name="UserName" asp-for="UserName" type="text" class="form-control"placeholder="Enter User Name"/>
         <span asp-validation-for="UserName" class="ifValid"></span>
     </div>
 
     <div class="form-group col-md-6">
         <label for="Password">Password</label>
-        <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Enter your Password"/>
+        <input name="Password" asp-for="Password" type="password" class="form-control" placeholder="Enter your Password"/>
         <span asp-validation-for="Password" class="ifValid"></span>
     </div>
 
-    <button type="submit" class="btn btn-info">Submit</button>
+    <button type="submit" class="btn btn-info" onclick="ValidateSubmit()">Submit</button>
 </form>
 
 <a asp-controller="Home" asp-action="Index">Back Home</a>

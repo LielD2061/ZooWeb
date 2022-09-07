@@ -184,13 +184,6 @@ namespace TheZOO.Data
                 new { AdminId = 1, AdminName = "Liel", Password = "A" },
                 new { AdminId = 2, AdminName = "Saar", Password = "A" }
                 );
-
-            modelBuilder.Entity<AnimalsPictuersModel>().HasData(
-                new { AnimalsPictuersModelId = 1, AnimalKind = "Mammals", ImageTitle = "Dolphin" },
-                new { AnimalsPictuersModelId = 2, AnimalKind = "Birds", ImageTitle = "Owl" },
-                new { AnimalsPictuersModelId = 3, AnimalKind = "Fish", ImageTitle = "Shark" },
-                new { AnimalsPictuersModelId = 4, AnimalKind = "Reptiles", ImageTitle = "Black Mamba" }
-                );
         }
     }
 }
