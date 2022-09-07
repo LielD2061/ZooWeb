@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ServiceStack.Text;
+//using ServiceStack.Text;
 using TheZOO.Data;
 using ThirdWebZoo.Repositories;
 
@@ -23,20 +23,20 @@ using (var scope = app.Services.CreateScope())
     ctx.Database.EnsureCreated();
 }
 
-services.AddAuthentication().AddGoogle(googleOptions =>
-{
-    googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
-    googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
-});
+//services.AddAuthentication().AddGoogle(googleOptions =>
+//{
+//    googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
+//    googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+//});
 
-builder.Services.AddAuthentication()
-   .AddGoogle(options =>
-   {
-       IConfigurationSection googleAuthNSection =
-       Config.GetSection("Authentication:Google");
-       options.ClientId = googleAuthNSection["ClientId"];
-       options.ClientSecret = googleAuthNSection["ClientSecret"];
-   });
+//builder.Services.AddAuthentication()
+//   .AddGoogle(options =>
+//   {
+//       IConfigurationSection googleAuthNSection =
+//       Config.GetSection("Authentication:Google");
+//       options.ClientId = googleAuthNSection["ClientId"];
+//       options.ClientSecret = googleAuthNSection["ClientSecret"];
+//   });
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
