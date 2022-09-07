@@ -17,18 +17,54 @@
         @foreach (var element in Model.AllAnimals!)
         {
             <tr>
-                <td><img src=@element.AnimalPicture class="myPic image-responsive" /></td>
-                <td>@element.Name</td>
+                <td>
+                    <div class="rounded float-start m-4">
+                        <a class="btn btn-light" value="check" asp-action="GetAnimal" asp-controller="Animals"
+                       asp-route-animalid="@element.AnimalId">
+                            <img src=@element.AnimalPicture class="myPic image-responsive" />
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <div class="rounded float-start m-4">
+                        <a class="btn btn-light" value="check" asp-action="GetAnimal" asp-controller="Animals"
+                       asp-route-animalid="@element.AnimalId">@element.Name</a>
+                    </div>
+                </td>
                 <td>@element.Description</td>
                 <td>
-                    @if (element.Comments_Animals != null)
-                    {
-                        @element.Comments_Animals!.Count
-                    }
-                    else
-                    {
-                        @ViewBag.Empty
-                    }
+                    <div>
+                        @if (element.Comments_Animals != null)
+                        {
+                            @element.Comments_Animals!.Count
+                        }
+                        else
+                        {
+                            @ViewBag.Empty
+                        }
+                        @if (ViewBag.User == true || ViewBag.Admin == true)
+                        {
+                            <form asp-controller="Animals" asp-action="NewComment" method="post">
+                                <div>
+                                    <input name="newComment" placeholder="Write Comment" />
+                                    <input name="AnimalId" type="hidden" value="@element.AnimalId" />
+                                </div>
+                                <input type="submit" name="AnimalId" value="comment" onclick="alert(msg)" />
+                            </form>
+                        }
+                        @if (ViewBag.Admin == true)
+                        {
+                            <form asp-controller="Admin" asp-action="DeleteAnimal" method="post">
+                                <input type="hidden" name="AnimalId" value="@element.AnimalId" />
+                                <input type="submit" name="AnimalId" value="Delete" onclick="alert(deleteMsg)" />
+                            </form>
+
+                            <form asp-controller="Admin" asp-action="EditAnimal" method="post">
+                                <input type="hidden" name="AnimalId" value="@element.AnimalId" />
+                                <input type="submit" name="AnimalId" value="Edit" />
+                            </form>
+                        }
+                    </div>
                 </td>
             </tr>
         }
