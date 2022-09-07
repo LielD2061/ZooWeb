@@ -9,55 +9,55 @@
     <div class="row col-md-6">
         <div class="col-lg-4">Name</div>
         <div class="col-lg-8">
-            <input asp-for="Name" placeholder="Enter your name" autocomplete="off" class="form-control" />
+           <input id="try" asp-for="Name" placeholder="Enter your name" autocomplete="off" class="form-control"/>
         </div>
     </div>
     <br />
     <div class="row col-md-6">
         <div class="col-lg-4">Age</div>
         <div class="col-lg-8">
-            <input asp-for="AnimalAge" placeholder="Enter your Password" class="form-control" />
+            <input id="try" asp-for="AnimalAge" placeholder="Enter your Password" class="form-control"/>
         </div>
     </div>
     <br />
     <div class="row col-md-6">
         <div class="col-lg-4">Animal Class</div>
         <div class="col-lg-8">
-            <input asp-for="AnimalClass" placeholder="Enter your Password" class="form-control" />
+            <input id="try" asp-for="AnimalClass" placeholder="Enter your Password" class="form-control"/>
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-4">Animal Species</div>
         <div class="col-lg-8">
-            <input asp-for="Species" placeholder="Enter your Password" class="form-control" />
+            <input id="try" asp-for="Species" placeholder="Enter your Password" class="form-control"/>
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-4">Description</div>
         <div class="col-lg-8">
-            <input asp-for="Description" placeholder="Enter your Password" class="form-control" />
+            <input id="try" asp-for="Description" placeholder="Enter your Password" class="form-control"/>
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-4">Add Picture</div>
         <div class="col-lg-8">
-            <input asp-for="AnimalPicture" placeholder="Enter your Password" class="form-control" />
+            <input id="try" asp-for="AnimalPicture" placeholder="Enter your Password" class="form-control"/>
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-4">Pick Category</div>
         <div class="col-lg-8">
-            <input asp-for="CategoryId" placeholder="Enter your Password" class="form-control" />
+            <input id="try" asp-for="CategoryId" placeholder="Enter your Password" class="form-control"/>
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-offset-4 col-lg-8">
-            <button id="trySubmit" type="submit" class="btn btn-primary" onclick="alert(editMsg)">Edit</button>
+            <button type="submit" class="btn btn-primary" onclick="Confirm()">Edit</button>
         </div>
     </div>
     <input asp-for="AnimalId" type="hidden" value="@Model.AnimalId"/>
