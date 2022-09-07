@@ -4,57 +4,73 @@
 }
 
 <h1>Add Animal</h1>
-<form asp-action="AddAnimal1" asp-controller="Admin">
-   <div class="row col-md-6">
-    <div class="col-lg-4">Name</div>
-    <div class="col-lg-8">
-        <input  asp-for="Name" placeholder="Enter your name" autocomplete="off" class="form-control"/>
+<form asp-action="AddAnimal" asp-controller="Admin" method="post">
+    <div class="row col-md-6">
+        <div class="col-lg-4"><h6>Name:</h6></div>
+        <div class="col-lg-8">
+            <input asp-for="Name" placeholder="Enter Animal's name" autocomplete="off" class="form-control" />
+            <span asp-validation-for="Name" class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
-<div class="row col-md-6">
-    <div class="col-lg-4">Age</div>
-    <div class="col-lg-8">
-        <input asp-for="AnimalAge" placeholder="Enter your Password" class="form-control" />
+    <br />
+    <div class="row col-md-6">
+        <div class="col-lg-4"><h6>Age:</h6></div>
+        <div class="col-lg-8">
+            <input asp-for="AnimalAge" placeholder="Enter Animal's Age" class="form-control" />
+            <span asp-validation-for="AnimalAge" class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
-<div class="row col-md-6">
-    <div class="col-lg-4">Animal Class</div>
-    <div class="col-lg-8">
-        <input asp-for="AnimalClass" placeholder="Enter your Password" class="form-control" />
+    <br />
+    <div class="row col-md-6">
+        <div class="col-lg-4"><h6>Animal Class:</h6></div>
+        <div class="col-lg-8">
+            <input asp-for="AnimalClass" placeholder="Enter Animal's class" class="form-control" />
+            <span asp-validation-for="AnimalClass" class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
-<div class="row col-md-6">
-    <div class="col-lg-4">Animal Species</div>
-    <div class="col-lg-8">
-        <input asp-for="Species" placeholder="Enter your Password" class="form-control" />
+    <br />
+    <div class="row col-md-6">
+        <div class="col-lg-4"><h6>Animal Species:</h6></div>
+        <div class="col-lg-8">
+            <input asp-for="Species" placeholder="Enter Animal's Species" class="form-control" />
+            <span asp-validation-for="Species" class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
-<div class="row col-md-6">
-    <div class="col-lg-4">Description</div>
-    <div class="col-lg-8">
-        <input asp-for="Description" placeholder="Enter your Password" class="form-control" />
+    <br />
+    <div class="row col-md-6">
+        <div class="col-lg-4"><h6>Description:</h6></div>
+        <div class="col-lg-8">
+            <input asp-for="Description" placeholder="Enter Animal's Description" class="form-control" />
+            <span asp-validation-for="Description" class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
-<div class="row col-md-6">
-    <div class="col-lg-4">Add Picture</div>
-    <div class="col-lg-8">
-        <input asp-for="AnimalPicture" placeholder="Add Picture" class="form-control" />
+    <br />
+    <div class="row col-md-6">
+        <div class="col-lg-4"><h6>Add Picture:</h6></div>
+        <div class="col-lg-8">
+            <input asp-for="AnimalPicture" placeholder="Add Picture" class="form-control" />
+            <span asp-validation-for="AnimalPicture" class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
-<div class="row col-md-6">
-    <div class="col-lg-4">Pick Category</div>
-    <div class="col-lg-8">
-        <input asp-for="CategoryId" placeholder="Enter your Password" class="form-control" />
+    <br />
+    <div class="row col-md-6">
+        <div class="col-lg-4"><h6>Pick Category</h6></div>
+        <div class="col-lg-8">
+            <input asp-for="CategoryId" type="radio" value="1" /> @ViewBag.Category1
+            <br />
+            <input asp-for="CategoryId" type="radio" value="2" /> @ViewBag.Category2
+            <br />
+            <input asp-for="CategoryId" type="radio" value="3" /> @ViewBag.Category3
+            <br />
+            <input asp-for="CategoryId" type="radio" value="4" /> @ViewBag.Category4
+            <br />
+            <input asp-for="CategoryId" type="radio" value="5" /> @ViewBag.Category5
+            <br />
+            <span asp-validation-for="CategoryId"class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
- <div class="row col-md-6">
+    <br />
+    <div class="row col-md-6">
         <div class="col-lg-offset-4 col-lg-8">
             <button type="submit" class="btn btn-light">Add</button>
         </div>

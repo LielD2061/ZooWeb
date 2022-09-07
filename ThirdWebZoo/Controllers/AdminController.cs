@@ -21,20 +21,28 @@ namespace ThirdWebZoo.Controllers
         public IActionResult SignIn(Admin admin)
         {
             bool adminview = _adminRepository.AllowAdmin(admin);
-            ViewBag.AdminName = admin.AdminName;
             return adminview ? RedirectToAction("SignAdmin", "Home", new { isAdmin = true }) : RedirectToAction("Index");
         }
         public IActionResult AddAnimal()
         {
             var stam = _ar.GetData();
             ViewBag.GetId = stam.AllAnimals!.ToList().Count;
+            ViewBag.Category1 = _ar.CategoryName(1);
+            ViewBag.Category2 = _ar.CategoryName(2);
+            ViewBag.Category3 = _ar.CategoryName(3);
+            ViewBag.Category4 = _ar.CategoryName(4);
+            ViewBag.Category5 = _ar.CategoryName(5);
             return View();
         }
         [HttpPost]
-        public IActionResult AddAnimal1(Animal animal)
+        public IActionResult AddAnimal(Animal animal)
         {
-            _adminRepository.CheckAddAnimal(animal);
-            return RedirectToAction("AllAnimals", "Animals");
+            if (ModelState.IsValid)
+            {
+                _adminRepository.CheckAddAnimal(animal);
+                return RedirectToAction("AllAnimals", "Animals");
+            }
+            return RedirectToAction("AddAnimal");
         }
         public IActionResult DeleteAnimal(int animalId)
         {
