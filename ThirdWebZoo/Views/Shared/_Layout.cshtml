@@ -33,7 +33,7 @@
                             <a style="color: black" class="nav-link" asp-controller="Animals" asp-action="AllAnimals">Explore Our ZOO</a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: black" class="nav-link" asp-controller="Home" asp-action="Prices">Prices for visiting</a>
+                            <a style="color: black" class="nav-link" asp-controller="Home" asp-action="Prices">Info for Visitor</a>
                         </li>
                     </ul>
 
@@ -91,6 +91,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
+        @await Html.PartialAsync("_SocialMediaPartialView")
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
