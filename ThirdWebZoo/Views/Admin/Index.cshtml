@@ -5,22 +5,24 @@
 
 <h1>Admin Login</h1>
 
-<form asp-action="SignIn" asp-controller="Admin">
-<div class="row">
-    <div class="col-lg-4">Admin Name</div>
-    <div class="col-lg-8">
-        <input  asp-for="AdminName" placeholder="Enter your name" autocomplete="off" class="form-control"/>
+<form onsubmit="return validateForm()" method="post" asp-action="SignIn" asp-controller="Admin">
+    <div class="row">
+        <div class="col-lg-4">Admin Name</div>
+        <div class="col-lg-8">
+            <input asp-for="AdminName" placeholder="Enter your name" autocomplete="off" class="form-control" />
+            <span asp-validation-for="AdminName" class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
-<div class="row">
-    <div class="col-lg-4">Password</div>
-    <div class="col-lg-8">
-        <input asp-for="Password" placeholder="Enter your Password" type="password" class="form-control" />
+    <br />
+    <div class="row">
+        <div class="col-lg-4">Password</div>
+        <div class="col-lg-8">
+            <input asp-for="Password" placeholder="Enter your Password" type="password" class="form-control" />
+            <span asp-validation-for="AdminName" class="ifValid"></span>
+        </div>
     </div>
-</div>
-<br />
- <div class="row">
+    <br />
+    <div class="row">
         <div class="col-lg-offset-4 col-lg-8">
             <button type="submit" class="btn btn-light">Log in</button>
         </div>
