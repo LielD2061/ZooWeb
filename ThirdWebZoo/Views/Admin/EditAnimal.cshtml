@@ -9,6 +9,7 @@
     <div class="row col-md-6">
         <div class="col-lg-4">Name</div>
         <div class="col-lg-8">
+           <input asp-for="Name" placeholder="Enter your name" autocomplete="off" class="form-control"/>
             <input asp-for="Name" placeholder="Enter your name" autocomplete="off" class="form-control" />
             <span asp-validation-for="Name" class="ifValid"></span>
         </div>
@@ -17,46 +18,68 @@
     <div class="row col-md-6">
         <div class="col-lg-4">Age</div>
         <div class="col-lg-8">
+
+            <input id="try" asp-for="AnimalAge" placeholder="Enter your Password" class="form-control"/>
+
             <input asp-for="AnimalAge" placeholder="Enter your Password" class="form-control" />
             <span asp-validation-for="AnimalAge" class="ifValid"></span>
+
         </div>
     </div>
     <br />
     <div class="row col-md-6">
         <div class="col-lg-4">Animal Class</div>
         <div class="col-lg-8">
+
+            <input id="try" asp-for="AnimalClass" placeholder="Enter your Password" class="form-control"/>
+
             <input asp-for="AnimalClass" placeholder="Enter your Password" class="form-control" />
             <span asp-validation-for="AnimalClass" class="ifValid"></span>
+
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-4">Animal Species</div>
         <div class="col-lg-8">
+
+            <input id="try" asp-for="Species" placeholder="Enter your Password" class="form-control"/>
+
             <input asp-for="Species" placeholder="Enter your Password" class="form-control" />
             <span asp-validation-for="Species" class="ifValid"></span>
+
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-4">Description</div>
         <div class="col-lg-8">
+
+            <input id="try" asp-for="Description" placeholder="Enter your Password" class="form-control"/>
             <input asp-for="Description" placeholder="Enter your Password" class="form-control" />
             <span asp-validation-for="Description" class="ifValid"></span>
+
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-4">Add Picture</div>
         <div class="col-lg-8">
+
+            <input id="try" asp-for="AnimalPicture" placeholder="Enter your Password" class="form-control"/>
+
             <input asp-for="AnimalPicture" placeholder="Enter your Password" class="form-control" />
             <span asp-validation-for="AnimalPicture" class="ifValid"></span>
+
         </div>
     </div>
     <br />
     <div class="row col-md-6">
         <div class="col-lg-4"><h6>Pick Category</h6></div>
         <div class="col-lg-8">
+
+            <input id="try" asp-for="CategoryId" placeholder="Enter your Password" class="form-control"/>
+
             <input asp-for="CategoryId" type="radio" value="1" /> @ViewBag.Category1
             <br />
             <input asp-for="CategoryId" type="radio" value="2" /> @ViewBag.Category2
@@ -68,12 +91,13 @@
             <input asp-for="CategoryId" type="radio" value="5" /> @ViewBag.Category5
             <br />
             <span asp-validation-for="CategoryId"class="ifValid"></span>
+
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-lg-offset-4 col-lg-8">
-            <button id="trySubmit" type="submit" class="btn btn-primary" onclick="alert(editMsg)">Edit</button>
+            <button type="submit" class="btn btn-primary" onclick="Confirm()">Edit</button>
         </div>
     </div>
     <input asp-for="AnimalId" type="hidden" value="@Model.AnimalId"/>

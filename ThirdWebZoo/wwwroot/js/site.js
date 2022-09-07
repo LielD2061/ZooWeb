@@ -1,8 +1,6 @@
-﻿msg = "Your Comment Accepted"
+﻿msg = "Your Comment Accepted";
 
-deleteMsg = "Your Delete succeeded"
-
-editMsg = "You Edit it Correctly"
+deleteMsg = "Your Delete succeeded";
 
 function ValidateSubmit() {
     let test = document.getElementsByName("UserName");
