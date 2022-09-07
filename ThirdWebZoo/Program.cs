@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+
 using TheZOO.Data;
 using ThirdWebZoo.Repositories;
 
@@ -23,6 +24,7 @@ using (var scope = app.Services.CreateScope())
     ctx.Database.EnsureDeleted();
     ctx.Database.EnsureCreated();
 }
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
